@@ -1,0 +1,301 @@
+<!--
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dashboard | Address Management</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="css/font-awesome.min.css" media="screen">
+        <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen">
+        <link rel="stylesheet" href="css/lobipanel/lobipanel.min.css" media="screen">
+        <link rel="stylesheet" href="css/toastr/toastr.min.css" media="screen">
+        <link rel="stylesheet" href="css/icheck/skins/line/blue.css">
+        <link rel="stylesheet" href="css/icheck/skins/line/red.css">
+        <link rel="stylesheet" href="css/icheck/skins/line/green.css">
+        <link rel="stylesheet" href="css/main.css" media="screen">
+        <script src="js/modernizr/modernizr.min.js"></script>
+          <style>
+  	#don:hover {
+		  color: orange;
+		  font-size: larger;
+	  }
+	  
+	  #sign:hover {
+		  color: orange !important;
+		  font-size: larger;
+  	}
+
+  	#man:hover {
+		  color: white !important;
+		  font-size: larger;
+  	}
+  </style>
+    </head>
+
+    <body class="top-navbar-fixed">
+        <div class="main-wrapper">
+            <nav class="navbar top-navbar bg-black-300 box-shadow">
+  	<div class="container-fluid">
+  		<div class="row">
+  			<div class="navbar-header no-padding">
+  				<a class="navbar-brand f-white" href="dashboard.php">
+  					<span style="" id="don">Donation</span> </a>
+  				<a class="navbar-brand f-white" href="dashboard.php">
+  					<span style="color:orange;" id="man">Management</span> </a>
+
+  				<span class="small-nav-handle hidden-sm hidden-xs"><i class="fa fa-arrows-h" style="color:orange;font-size:large;"></i></span>
+  			</div>
+
+  			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+  				<ul class="nav navbar-nav navbar-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+
+
+  					<li><a href="logout.php" class="f-white text-center"><i class="fa fa-sign-out" style="color:orange;font-size:medium;"></i> <span id="sign">Signout</span></a></li>
+
+
+
+  				</ul>
+  			</div>
+  		</div>
+  	</div>
+  </nav>
+            <div class="content-wrapper">
+                <div class="content-container">
+
+                    <div class="left-sidebar bg-black-300 box-shadow ">
+                        <div class="sidebar-content">
+                            <div class="sidebar-nav">
+                                <ul class="side-nav color-gray">
+
+                                    <li>
+                                        <a href="dashboard.php"><i class="fa fa-dashboard" style="color:orange" aria-hidden="true"></i> <span class="fa-text">Dashboard</span> </a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="AddressMaster.php"><i class="fa fa-list-alt" style="color:orange" aria-hidden="true"></i> <span class="fa-text">Address Master</span></a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="AllRecords.php"><i class="fa fa-search" style="color:orange;" aria-hidden="true"></i> <span class="fa-text">Search</span></a>
+                                    </li>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-page">
+                        <div class="container-fluid">
+                            <div class="row page-title-div">
+                                <div class="col-sm-6">
+                                    <h2 class="title">Dashboard</h2>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <section class="section">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                                        <a href="AllRecords.php" class="dashboard-stat bg-danger" style="background-color:#ffa700;border-radius:25px;">
+                                            <span class="name" style="font-size:large;font-weight: bold;">TOTAL RECORDS</span>
+                                            <?php
+                                            $sql1 = "SELECT * from address12 ";
+                                            $query1 = $dbh->prepare($sql1);
+                                            $query1->execute();
+                                            $results1 = $query1->fetchAll(PDO::FETCH_OBJ);
+                                            $totalstudents = $query1->rowCount();
+                                            ?>
+
+                                            <span class="number counter" style="line-height: 2.1 !important;"><?php echo htmlentities($totalstudents); ?></span>
+
+                                            <span class="bg-icon"><i class="fa fa-users" style="padding: 10px;"></i></span>
+                                        </a>
+                                    </div>
+                          
+                                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                                        <a class="dashboard-stat bg-danger" style="background-color:#8fb31d;border-radius:25px;">
+                                            <span class="name" style="font-size:large;font-weight: bold;">TOP COUNTRY DONATION</span><br><br>
+                                            <?php
+                                            $sql = "SELECT COUNT(CD), `Country` FROM address12 GROUP BY Country ORDER BY COUNT(CD) DESC LIMIT 3";
+                                            $query = $dbh->prepare($sql);
+                                            $query->execute();
+                                            $results = $query->fetchAll(PDO::FETCH_OBJ);
+                                            $cnt = 1;
+                                            if ($query->rowCount() > 0) {
+                                                foreach ($results as $result) {   ?>
+
+
+                                                    <span class=" " style="line-height: 2.1 !important;"><?php echo htmlentities($result->Country); ?></span><br>
+
+                                                    <span class="bg-icon"><i class="fa fa-globe" style="padding: 10px;"></i></span>
+
+                                            <?php $cnt = $cnt + 1;
+                                                }
+                                            } ?>
+                                        </a>
+                                    </div>
+
+
+                                    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                                        <a class="dashboard-stat bg-success" style="background-color:#f95e49;border-radius:25px;">
+                                            <span class="name" style="font-size:large;font-weight: bold;">RECENT DONORS</span><br><br>
+                                            <?php
+                                            $sql = "SELECT fullname FROM address12 ORDER BY CD DESC LIMIT 5";
+                                            $query = $dbh->prepare($sql);
+                                            $query->execute();
+                                            $results = $query->fetchAll(PDO::FETCH_OBJ);
+                                            $cnt = 1;
+                                            if ($query->rowCount() > 0) {
+                                                foreach ($results as $result) {   ?>
+
+
+                                                    <span class=" " style="line-height: 2.1 !important;"><?php echo htmlentities($result->fullname); ?></span><br>
+
+                                                    <span class="bg-icon"><i class="fa fa-gift" style="padding: 10px;"></i></span>
+
+                                            <?php $cnt = $cnt + 1;
+                                                }
+                                            } ?>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <script src="js/jquery/jquery-2.2.4.min.js"></script>
+        <script src="js/jquery-ui/jquery-ui.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/pace/pace.min.js"></script>
+        <script src="js/lobipanel/lobipanel.min.js"></script>
+        <script src="js/prism/prism.js"></script>
+        <script src="js/waypoint/waypoints.min.js"></script>
+        <script src="js/counterUp/jquery.counterup.min.js"></script>
+        <script src="js/amcharts/amcharts.js"></script>
+        <script src="js/amcharts/serial.js"></script>
+        <script src="js/amcharts/plugins/export/export.min.js"></script>
+        <link rel="stylesheet" href="js/amcharts/plugins/export/export.css" type="text/css" media="all" />
+        <script src="js/amcharts/themes/light.js"></script>
+        <script src="js/icheck/icheck.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/production-chart.js"></script>
+        <script src="js/traffic-chart.js"></script>
+        <script src="js/task-list.js"></script>
+        <script>
+            $(function() {
+
+                // Counter for dashboard stats
+                $('.counter').counterUp({
+                    delay: 10,
+                    time: 1000
+                });
+
+                // Welcome notification
+
+
+            });
+        </script>
+    </body>
+
+    </html>
+    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<head th:include="template :: headFragment(${pageTitle})"></head>
+</head>
+<body>
+	<div class="wrapper">
+		<div th:replace="template :: navbar"></div>
+		<div th:replace="template :: sidebar"></div>
+<!-- 		===============================================================================================================================================
+Work Below >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================================================================================================================================
+
+ -->
+
+		<div class="content-wrapper">
+			<div class="content-header"></div>
+			<section class="content">
+				<div class="container-fluid">
+					<h3>Masters</h3>
+					<div class="row">
+
+
+						<div class="col-md-3 col-sm-6 col-12">
+							<div class="info-box bg-primary">
+								<span class="info-box-icon"><i class="fa fa-list"></i></span>
+								<div class="info-box-content">
+									<a href="/organization"> <span class="info-box-text">Total Students</span>
+										<span class="info-box-number">41,410</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 50%"></div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</section>
+		</div>
+
+
+
+<!-- 		==============================================================================================================================================
+Work Above ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+===================================================================================================================================================
+ -->
+
+	</div>
+	<div th:replace="template :: jsscript"></div>
+</body>
+</html>
+
