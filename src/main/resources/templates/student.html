@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head th:include="template :: headFragment(${pageTitle})"></head>
+</head>
+<body class="sidebar">
+	<div class="wrapper">
+		<div th:replace="template :: navbar"></div>
+		<div th:replace="template :: sidebar"></div>
+		<!-- 		===============================================================================================================================================
+Work Below >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+====================================================================================================================================================
+
+ -->
+
+		<div class="content-wrapper">
+			<div class="content-header"></div>
+			<section class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-3 col-sm-3 col-lg-3"></div>
+						<div class="col-md-6 col-sm-6 col-lg-6">
+							<div class="card card-primary">
+								<div class="card-header">Add Student</div>
+								<div class="card-body">
+									
+										
+										<form class="" id="StudentForm" method="post">
+										
+										<p>
+												<label for="register_number">Register Number</label> <input type="text"
+													id="register_number" name="register_number"
+													firstname""
+													class="form-control"
+													placeholder="Register Number" required autofocus>
+											</p>
+											<p>
+												<label for="firstname">First Name</label> <input type="text"
+													id="firstname" name="firstname"
+													firstname""
+													class="form-control"
+													placeholder="First Name" required autofocus>
+											</p>
+											<p>
+												<label for="middlename">Middle Name</label> <input
+													type="text" id="middlename" name="middlename"
+													class="form-control" placeholder="Middle Name" required>
+											</p>
+											<p>
+												<label for="lastname">Last Name</label> <input type="text"
+													id="lastname" name="lastname" class="form-control"
+													placeholder="Last Name" required>
+											</p>
+											<p>
+												<label for="date_of_birth">Date of Birth</label> <input
+													type="date" id="date_of_birth" name="date_of_birth"
+													class="form-control" placeholder="Date of Birth" required>
+											</p>
+											<p>
+												<label for="birth_place">Birth Place</label> <input
+													type="text" id="birth_place" name="birth_place"
+													class="form-control" placeholder="Birthplace" required>
+											</p>
+											<p>
+												<label for="firstname">Caste</label> <input
+													type="text" id="caste" name="caste"
+													class="form-control" placeholder="Caste" required>
+											</p>
+											
+											<button id="btnSubmit" type="button"
+												class="btn btn-lg btn-primary btn-block">Register</button>
+										</form>
+
+									
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+		</div>
+
+
+
+		<!-- 		==============================================================================================================================================
+Work Above ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+===================================================================================================================================================
+ -->
+
+	</div>
+	<div th:replace="template :: jsscript"></div>
+	<script>
+ $('#btnSubmit').on('click', function() {
+	var formData = $('#StudentForm').serialize();
+$.ajax({
+    url: '/addStudent',
+    method: 'POST',
+    data: formData,
+    cache : false,
+    processData: false
+}).done(function(data){
+	
+	$("#errorBox").removeClass('d-none');
+	$("#errorFeedback").text(data.message);
+		if (data.status == 200) {
+			swal({
+                title: "Successfully !",
+                text: data.message,
+                type: "success",
+                width: 300,
+                showCancelButton: !0,
+                confirmButtonText: 'OK',
+                cancelButtonClass: "btn btn-danger m-l-10",
+                preConfirm: function () {
+                	window.location.href = "/student";
+                }
+            });
+    	} else if (data.status == 300) {
+			swal({
+                title: "Exist !",
+                text: data.message,
+                type: "warning",
+                width: 300,
+                showCancelButton: !0,
+                confirmButtonText: 'OK',
+                cancelButtonClass: "btn btn-danger m-l-10",
+                preConfirm: function () {
+                	window.location.href = "/student";
+                }
+            });
+    	}else{
+        	swal({
+                title: "Error !",
+                text: "Something Wents Wrong !",
+                type: "error",
+                width: 300,
+                showCancelButton: !0,
+                confirmButtonText: 'OK',
+                cancelButtonClass: "btn btn-danger m-l-10"
+            });
+        } 
+});  
+}); 
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!--
+<!--  
     <!DOCTYPE html>
     <html lang="en">
 
@@ -249,7 +249,7 @@
 <head>
 <head th:include="template :: headFragment(${pageTitle})"></head>
 </head>
-<body>
+<body class="sidebar-collapse">
 	<div class="wrapper">
 		<div th:replace="template :: navbar"></div>
 		<div th:replace="template :: sidebar"></div>
@@ -263,15 +263,17 @@ Work Below >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 			<div class="content-header"></div>
 			<section class="content">
 				<div class="container-fluid">
-					<h3>Masters</h3>
+					
 					<div class="row">
 
-
+						<div class="col-md-1 col-sm-3 col-3">
+							
+						</div>
 						<div class="col-md-3 col-sm-6 col-12">
 							<div class="info-box bg-primary">
 								<span class="info-box-icon"><i class="fa fa-list"></i></span>
 								<div class="info-box-content">
-									<a href="/organization"> <span class="info-box-text">Total Students</span>
+									<a href="/organization"> <span class="info-box-text">School 1</span>
 										<span class="info-box-number">41,410</span>
 										<div class="progress">
 											<div class="progress-bar" style="width: 50%"></div>
@@ -280,7 +282,32 @@ Work Below >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 								</div>
 							</div>
 						</div>
-
+						<div class="col-md-3 col-sm-6 col-12">
+							<div class="info-box bg-warning">
+								<span class="info-box-icon"><i class="fa fa-list"></i></span>
+								<div class="info-box-content">
+									<a href="/organization"> <span class="info-box-text">School 2</span>
+										<span class="info-box-number">41,410</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 50%"></div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-12">
+							<div class="info-box bg-danger">
+								<span class="info-box-icon"><i class="fa fa-list"></i></span>
+								<div class="info-box-content">
+									<a href="/organization"> <span class="info-box-text">School 3</span>
+										<span class="info-box-number">41,410</span>
+										<div class="progress">
+											<div class="progress-bar" style="width: 50%"></div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
 
 					</div>
 				</div>

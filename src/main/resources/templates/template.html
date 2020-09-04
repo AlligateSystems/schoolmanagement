@@ -23,29 +23,16 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
+                    <a href="/SchoolManagementSystem" class="nav-link">Home</a>
                 </li>
             </ul>
 
-            <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+            
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" data-slide="true" href="/logout"><i class="fa fa-lock"></i></a>
+                    <a class="nav-link" data-slide="true" href="/SchoolManagementSystem/logout"><i class="fa fa-lock"></i></a>
                 </li>
             </ul>
         </nav>
@@ -63,7 +50,7 @@
 	        <nav class="mt-2">
 	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 	                <li class="nav-item has-treeview menu-open">
-	                    <a href="/dashboard" class="nav-link active">
+	                    <a href="/SchoolManagementSystem" class="nav-link active">
 	                        <i class="nav-icon fa fa-dashboard"></i>
 	                        <span>Dashboard</span>
 	                    </a>
@@ -76,15 +63,15 @@
 	                        <p>Masters<i class="right fa fa-angle-left"></i></p>
 	                    </a>
 	                    <ul class="nav nav-treeview">
-	                        <li class="nav-item">
-	                            <a href="school" class="nav-link">
-	                                <i class="fa fa-edit nav-icon"></i>
-	                                <span>Add School</span>
-	                            </a>
-	                        </li>
+<!-- 	                        <li class="nav-item"> -->
+<!-- 	                            <a href="school" class="nav-link"> -->
+<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
+<!-- 	                                <span>Add School</span> -->
+<!-- 	                            </a> -->
+<!-- 	                        </li> -->
 	
 	                        <li class="nav-item">
-	                            <a href="student" class="nav-link">
+	                            <a href="/SchoolManagementSystem/student" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>Add Student</span>
 	                            </a>
@@ -103,6 +90,22 @@
 	                            <a href="marks" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>Add Marks</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview">
+	                    <a href="#" class="nav-link">
+	                        <i class="nav-icon fa fa-wpforms"></i>
+	                        <p>Documents<i class="right fa fa-angle-left"></i></p>
+	                    </a>
+	                    <ul class="nav nav-treeview">
+	                        <li class="nav-item">
+	                            <a href="marks" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Leaving Certificate</span>
 	                            </a>
 	                        </li>
 	                    </ul>
