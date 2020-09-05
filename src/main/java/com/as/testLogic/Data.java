@@ -1,4 +1,4 @@
-package com.as.DocGenegatr;
+package com.as.testLogic;
 
 public class Data {
 	  private String empNumber;

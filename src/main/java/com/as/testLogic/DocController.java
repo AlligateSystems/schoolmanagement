@@ -1,4 +1,4 @@
-package com.as.DocGenegatr;
+package com.as.testLogic;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -33,6 +33,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itextpdf.text.Document;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.tool.xml.XMLWorkerHelper;
 
@@ -114,11 +117,21 @@ public class DocController {
 			final TagNode tagNode = htmlCleaner.clean(content);
 			content = htmlCleaner.getInnerHtml(tagNode);
 			Document document = new Document();
+			
+			
+			
 			response.setContentType("application/pdf");
 			PdfWriter writer = PdfWriter.getInstance(document, response.getOutputStream());
+			
+			FontFactory.register("src/main/resources/fonts/HindVadodara-Regular.ttf","HindVadodara-Regular");
+	        Font f = FontFactory.getFont("HindVadodara-Regular", "Cp1253", true);
+	        Paragraph p = new Paragraph(content, f);
+	        
 			StringBuilder htmlString = new StringBuilder();
 			htmlString.append(content);
 			document.open();
+			document.add(p);
+			
 			InputStream is = new ByteArrayInputStream(htmlString.toString().getBytes("utf-8"));
 			Reader targetReader = new InputStreamReader(is, StandardCharsets.UTF_8);
 			XMLWorkerHelper.getInstance().parseXHtml(writer, document, targetReader);
