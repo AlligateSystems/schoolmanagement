@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head th:include="template :: headFragment(${pageTitle})"></head>
+    <style>
+        .custom-select {
+            background: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div th:replace="template :: navbar"></div>
+        <div th:replace="template :: sidebar"></div>
+
+        <!-- ------------------Work Below------------------ -->
+        <div class="content-wrapper">
+            <div class="content-header"></div>
+            <section class="content">
+                <div class="container-fluid">
+
+                    <!-- Form Fields -->
+                    <div class="card card-primary">
+                        <div class="card-header">Add New Students</div>
+                        <div class="card-body">
+                            <form class="" id="CustomeForm" method="post">
+                                <div class="row">
+                                	<div class="col-md-12">
+										<div class="form-group d-none">
+											<label>ID</label> <input class="form-control" id="id" name="id">
+										</div>
+									</div>
+									
+                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
+                                        <label>Register Number *</label>
+                                        <input type="text" id="registerNumber" name="registerNumber" placeholder="Register Number" class="form-control">
+                                    </div>
+                                    
+                                   <!--  <div class="col-xl-6 col-lg-6 col-12 form-group">
+                                        <label>Roll Number *</label>
+                                        <input type="text" id="rollNumber" name="rollNumber" placeholder="Roll Number" class="form-control">
+                                    </div> -->
+                                    
+                             
+                                    
+                                    
+                                    <div class="col-12 form-group mg-t-8">
+                                        <button id="btnSubmit" type="button" class="btn btn-primary">Submit</button>
+                                        <!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
+                                        <button id="btnReset" type="reset" class="btn btn-danger">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+					<!-- Form Fields -->
+
+
+
+
+                </div>
+            </section>
+        </div>
+        <!-- ------------------Work Above ------------------ -->
+        
+    </div>
+    <div th:replace="template :: jsscript"></div>
+    
+    
+    <script>
+    $(document).ready(function() {
+
+        $('#btnSubmit').on('click', function() {
+        	
+        	window.location.href = '/bonafide/bonafide/'+$("#registerNumber").val();
+             
+        }); 
+        
+    });
+    </script>
+    
+    
+</body>
+</html>

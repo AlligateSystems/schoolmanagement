@@ -12,6 +12,7 @@ import lombok.ToString;
 public class BaseResponse {
 	private int status;
 	private String message;
-	private Object result;
+	private String type;
+	private Object body;
 	private List<FieldErrorMessage> fieldErrorMessageList;
 }

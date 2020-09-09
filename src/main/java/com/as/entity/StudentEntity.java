@@ -3,7 +3,7 @@ package com.as.entity;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.as.config.Base;
+import com.as.config.BaseEntity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,13 +14,24 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class StudentEntity extends Base {
-
-	private String registernumber;
-	private String firstname;
-	private String middlename;
-	private String lastname;
+public class StudentEntity extends BaseEntity {
+	private String firstName;
+	private String middleName;
+	private String lastName;
+	private String fullName;
+	private String gender;
+	private String birthPlace;
+	private String dateOfBirth;
+	private String fatherName;
+	private String motherName;
+	private String occupation;
 	private String caste;
-	private String birthplace;
-	private String dateofbirth;
+	private String address;
+	private String contactNumber;
+	private String email;
+	private String registerNumber;
+	private String classIn;
+	private String sectionIn;
+	private String rollNumber;
+	private String bloodGroup;
 }

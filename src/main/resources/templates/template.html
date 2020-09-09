@@ -12,7 +12,6 @@
         <link rel="stylesheet" type="text/css" th:href="@{plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css}"/>
         <link rel="stylesheet" type="text/css" th:href="@{plugins/datatables/extensions/Responsive/css/dataTables.responsive.css}"/>
         <link rel="stylesheet" type="text/css" th:href="@{plugins/select2/select2.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{plugins/bootstrap-tagsinput/bootstrap-tagsinput.css}"/>
 </head>
 
 	<th:block th:fragment="navbar">
@@ -23,7 +22,7 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/SchoolManagementSystem" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
             </ul>
 
@@ -32,7 +31,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" data-slide="true" href="/SchoolManagementSystem/logout"><i class="fa fa-lock"></i></a>
+                    <a class="nav-link" data-slide="true" href="/logout"><i class="fa fa-lock"></i></a>
                 </li>
             </ul>
         </nav>
@@ -50,7 +49,7 @@
 	        <nav class="mt-2">
 	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 	                <li class="nav-item has-treeview menu-open">
-	                    <a href="/SchoolManagementSystem" class="nav-link active">
+	                    <a href="/" class="nav-link active">
 	                        <i class="nav-icon fa fa-dashboard"></i>
 	                        <span>Dashboard</span>
 	                    </a>
@@ -71,7 +70,7 @@
 <!-- 	                        </li> -->
 	
 	                        <li class="nav-item">
-	                            <a href="/SchoolManagementSystem/student" class="nav-link">
+	                            <a href="student" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>Add Student</span>
 	                            </a>
@@ -92,6 +91,12 @@
 	                                <span>Add Marks</span>
 	                            </a>
 	                        </li>
+	                        <li class="nav-item">
+	                            <a href="attendance" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add Attendance</span>
+	                            </a>
+	                        </li>
 	                    </ul>
 	                </li>
 	            </ul>
@@ -103,9 +108,9 @@
 	                    </a>
 	                    <ul class="nav nav-treeview">
 	                        <li class="nav-item">
-	                            <a href="marks" class="nav-link">
+	                            <a href="bonafide" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
-	                                <span>Leaving Certificate</span>
+	                                <span>Bonafide Certificate</span>
 	                            </a>
 	                        </li>
 	                    </ul>
