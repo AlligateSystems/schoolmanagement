@@ -10,6 +10,5 @@ import com.as.entity.MarksEntity;
 @Repository
 public interface MarksRepository extends JpaRepository<MarksEntity, Integer> {
 	List<MarksEntity> findByRegisterNumber(String registerNumber);
-
 	List<MarksEntity> findById(int id);
 }
