@@ -18,12 +18,23 @@ public class MarksForm {
 	private String gujratiFinal;
 	private String gujratiCondoned;
 	private String gujratiGrace;
+	private String gujratiFirst5;//
+	private String gujratiSecond5;
+	private String gujratiNotebook;
+	private String gujratiActivity;
+	private String gujratiTotalMarks;
 
 	private String englishFirst;
 	private String englishSecond;
 	private String englishFinal;
 	private String englishCondoned;
 	private String englishGrace;
+	private String englishFirst5;//
+	private String englishSecond5;
+	private String englishNotebook;
+	private String englishActivity;
+	private String englishTotalMarks;
+	
 
 	private String psychologyFirst;
 	private String psychologySecond;
@@ -54,5 +65,48 @@ public class MarksForm {
 	private String computerFinal;
 	private String computerCondoned;
 	private String computerGrace;
+	private String computerFirst5;//
+	private String computerSecond5;
+	private String computerNotebook;
+	private String computerActivity;
+	private String computerTotalMarks;
+	
+	private String socialScienceFirst;
+	private String socialScienceSecond;
+	private String socialScienceFirst5;//
+	private String socialScienceSecond5;
+	private String socialScienceNotebook;
+	private String socialScienceActivity;
+	private String socialScienceTotalMarks;
+	
+	private String mathematicsFirst;
+	private String mathematicsSecond;
+	private String mathematicsFirst5;//
+	private String mathematicsSecond5;
+	private String mathematicsNotebook;
+	private String mathematicsActivity;
+	private String mathematicsTotalMarks;
+	
+	
+	private String scienceTechnologyFirst;
+	private String scienceTechnologySecond;
+	private String scienceTechnologyFirst5;//
+	private String scienceTechnologySecond5;
+	private String scienceTechnologyNotebook;
+	private String scienceTechnologyActivity;
+	private String scienceTechnologyTotalMarks;
+	
+	private String drawingFirst;
+	private String drawingSecond;
+	private String drawingFirst5;//
+	private String drawingSecond5;
+	private String drawingNotebook;
+	private String drawingActivity;
+	private String drawingTotalMarks;
+
+	
+	
+	
+	
 
 }

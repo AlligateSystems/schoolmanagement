@@ -14,30 +14,42 @@ import com.as.form.MarksForm;
 import com.as.service.MarksService;
 
 @Controller
-@RequestMapping("marks")
+@RequestMapping("")
 public class MarksController {
 
 	@Autowired
 	MarksService marksService;
 
-	@GetMapping("")
-	public ModelAndView attendance() {
-		ModelAndView modelAndView = new ModelAndView("marks");
+	@GetMapping("marks_a")
+	public ModelAndView marksA() {
+		ModelAndView modelAndView = new ModelAndView("marksA");
+		modelAndView.addObject("pageTitle", "Add Marks");
+		return modelAndView;
+	}
+	
+	@GetMapping("marks_b")
+	public ModelAndView marksB() {
+		ModelAndView modelAndView = new ModelAndView("marksB");
 		modelAndView.addObject("pageTitle", "Add Marks");
 		return modelAndView;
 	}
 
-	@PostMapping("marks")
-	public @ResponseBody BaseResponse addMarks(MarksForm form) {
-		return marksService.addMarks(form);
+	@PostMapping("marks/marks_a")
+	public @ResponseBody BaseResponse addMarksA(MarksForm form) {
+		return marksService.addMarksA(form);
+	}
+	
+	@PostMapping("marks/marks_b")
+	public @ResponseBody BaseResponse addMarksB(MarksForm form) {
+		return marksService.addMarksB(form);
 	}
 
-	@PostMapping("getAll")
+	@PostMapping("marks/getAll")
 	public @ResponseBody BaseResponse getAll() {
 		return marksService.getMarks();
 	}
 
-	@PostMapping("/delete/{registerNumber}")
+	@PostMapping("marks/delete/{registerNumber}")
 	public @ResponseBody BaseResponse delete(@PathVariable(value = "registerNumber") String registerNumber) {
 		return marksService.deleteMarks(registerNumber);
 	}

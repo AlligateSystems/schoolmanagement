@@ -106,26 +106,20 @@
 	                                    <label>Class *</label>
 	                                    <select class="custom-select" id="classIn" name="classIn">
 	                                        <option value="">Please Select Class *</option>
-	                                        <option value="Play">Play</option>
-	                                        <option value="Nursery">Nursery</option>
-	                                        <option value="One">One</option>
-	                                        <option value="Two">Two</option>
-	                                        <option value="Three">Three</option>
-	                                        <option value="Four">Four</option>
-	                                        <option value="Five">Five</option>
+	                                        <option value="1">1</option>
+	                                        <option value="2">2</option>
+	                                        <option value="3">3</option>
+	                                        <option value="4">4</option>
+	                                        <option value="5">5</option>
+	                                        <option value="6">6</option>
+	                                        <option value="7">7</option>
+	                                        <option value="8">8</option>
+	                                        <option value="9">9</option>
+	                                        <option value="10">10</option>
+	                                        <option value="11">11</option>
+	                                        <option value="12">12</option>
 	                                    </select>
                                 	</div>
-                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    <label>Section *</label>
-                                    <select class="custom-select" id="sectionIn" name="sectionIn">
-                                        <option value="">Please Select Section *</option>
-                                        <option value="Pink">Pink</option>
-                                        <option value="Blue">Blue</option>
-                                        <option value="Bird">Bird</option>
-                                        <option value="Rose">Rose</option>
-                                        <option value="Red">Red</option>
-                                    </select>
-                                </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Roll Number *</label>
                                         <input type="text" id="rollNumber" name="rollNumber" placeholder="Roll Number" class="form-control">
@@ -195,7 +189,6 @@
 							{ title : "Name" ,  "data": "fullName"  },
 							{ title : "Gender" ,  "data": "gender"  },
 							{ title : "Class" ,  "data": "classIn"  },
-							{ title : "Section" ,  "data": "sectionIn"  },
 							{ title : "Address" ,  "data": "address"  },
 							{ title : "DOB" ,  "data": "dateOfBirth"  },
 							{ title : "Contact Number",  "data": "contactNumber" },
@@ -230,7 +223,6 @@
             $('#email').val(row.data().email);
             $('#registerNumber').val(row.data().registerNumber);
             $('#classIn').val(row.data().classIn);
-            $('#sectionIn').val(row.data().sectionIn);
             $('#rollNumber').val(row.data().rollNumber);
             $('#bloodGroup').val(row.data().bloodGroup);
             $("#btnSubmit").html('Update');

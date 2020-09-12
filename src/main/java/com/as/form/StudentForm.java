@@ -24,7 +24,6 @@ public class StudentForm {
 	private String email;
 	private String registerNumber;
 	private String classIn;
-	private String sectionIn;
 	private String rollNumber;
 	private String bloodGroup;
 

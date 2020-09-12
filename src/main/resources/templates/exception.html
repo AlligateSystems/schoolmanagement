@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<head th:include="template :: headFragment(${pageTitle})"></head>
+<style>
+.custom-select {
+	background: none !important;
+}
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div th:replace="template :: navbar"></div>
+		<div th:replace="template :: sidebar"></div>
+
+		<!-- ------------------Work Below------------------ -->
+		<div class="content-wrapper">
+			<div class="content-header"></div>
+			<section class="content">
+				<div class="container-fluid">
+
+					<!-- Form Fields -->
+					<div class="card card-primary">
+						<div class="card-header">Get Bonafide Certificate</div>
+						<div class="card-body">
+							<!-- Main content -->
+
+							<div class="error-page">
+								<h2 class="headline text-warning">404</h2>
+								<div class="error-content">
+									<h3> <i class="fa fa-warning text-warning"></i> Student Not In This Class </h3>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- Form Fields -->
+
+
+
+
+				</div>
+			</section>
+		</div>
+		<!-- ------------------Work Above ------------------ -->
+
+	</div>
+	<div th:replace="template :: jsscript"></div>
+</body>
+</html>

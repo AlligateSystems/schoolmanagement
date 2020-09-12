@@ -121,7 +121,7 @@ public class BonafideController {
 						r.setText(text, 0);
 					}
 					if (text != null && text.contains("$standard$")) {
-						text = text.replace("$standard$", "12 HSC");
+						text = text.replace("$standard$", student.getClassIn());
 						r.setText(text, 0);
 					}
 					if (text != null && text.contains("$year$")) {

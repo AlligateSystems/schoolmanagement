@@ -1,5 +1,6 @@
 package com.as.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -136,12 +137,27 @@ public class AttendanceService {
 
 	public BaseResponse getAttendance() {
 		BaseResponse response = new BaseResponse();
+		List<AttendenceEntity> list = attendanceRepository.findAll();
+		List<AttendenceEntity> array = new ArrayList<>();
+		for (AttendenceEntity attendenceEntity : list) {
+			if (!checkA(array, attendenceEntity)) {
+				array.add(attendenceEntity);
+			}
+		}
 		response.setStatus(200);
 		response.setType(ResponseType.SUCCESS);
 		response.setMessage("Student Asstedace");
-		response.setBody(attendanceRepository.findAll());
-
+		response.setBody(array);
 		return response;
+	}
+
+	public boolean checkA(List<AttendenceEntity> array, AttendenceEntity entity) {
+		for (AttendenceEntity attendenceEntity : array) {
+			if (attendenceEntity.getRegisterNumber().equals(entity.getRegisterNumber())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public BaseResponse deleteAttendance(String registerNumber) {

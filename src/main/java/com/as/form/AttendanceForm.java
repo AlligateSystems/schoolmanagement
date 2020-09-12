@@ -8,7 +8,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class AttendanceForm {
-	private String id;
 	private String registerNumber;
 	private String rollNumber;
 	

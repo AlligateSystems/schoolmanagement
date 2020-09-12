@@ -1,5 +1,6 @@
 package com.as.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,126 @@ public class MarksService {
 	@Autowired
 	MarksRepository marksRepository;
 
-	public BaseResponse addMarks(MarksForm form) {
+	public BaseResponse addMarksA(MarksForm form) {
+		BaseResponse response = new BaseResponse();
+
+		List<MarksEntity> check = marksRepository.findByRegisterNumber(form.getRegisterNumber());
+		if (!check.isEmpty()) {
+			response.setStatus(200);
+			response.setType(ResponseType.WARNING);
+			response.setMessage("Student Marks Already");
+			return response;
+		}
+		MarksEntity entity = new MarksEntity();
+
+		entity.setRollNumber(form.getRollNumber());
+		entity.setRegisterNumber(form.getRegisterNumber());
+		entity.setSubject("Gujrati");
+		entity.setTotalTest("80");
+		entity.setFirstTest(form.getGujratiFirst());
+		entity.setFirstTest5(form.getGujratiFirst5());
+		entity.setSecondTest(form.getGujratiSecond());
+		entity.setSecondTest5(form.getGujratiSecond5());
+		entity.setNotebook(form.getGujratiNotebook());
+		entity.setActivity(form.getGujratiActivity());
+		entity.setTotalMarks(form.getGujratiTotalMarks());
+
+		entity = marksRepository.save(entity);
+
+		entity = new MarksEntity();
+		entity.setRollNumber(form.getRollNumber());
+		entity.setRegisterNumber(form.getRegisterNumber());
+		entity.setSubject("English");
+		entity.setTotalTest("80");
+		entity.setFirstTest(form.getEnglishFirst());
+		entity.setFirstTest5(form.getEnglishFirst5());
+		entity.setSecondTest(form.getEnglishSecond());
+		entity.setSecondTest5(form.getEnglishSecond5());
+		entity.setNotebook(form.getEnglishNotebook());
+		entity.setActivity(form.getEnglishActivity());
+		entity.setTotalMarks(form.getEnglishTotalMarks());
+		entity = marksRepository.save(entity);
+
+		entity = new MarksEntity();
+		entity.setRollNumber(form.getRollNumber());
+		entity.setRegisterNumber(form.getRegisterNumber());
+		entity.setSubject("SocialScience");
+		entity.setTotalTest("80");
+		entity.setFirstTest(form.getSocialScienceFirst());
+		entity.setFirstTest5(form.getSocialScienceFirst5());
+		entity.setSecondTest(form.getSocialScienceSecond());
+		entity.setSecondTest5(form.getSocialScienceSecond5());
+		entity.setNotebook(form.getSocialScienceNotebook());
+		entity.setActivity(form.getSocialScienceActivity());
+		entity.setTotalMarks(form.getSocialScienceTotalMarks());
+		entity = marksRepository.save(entity);
+
+		entity = new MarksEntity();
+		entity.setRollNumber(form.getRollNumber());
+		entity.setRegisterNumber(form.getRegisterNumber());
+		entity.setSubject("Mathematics");
+		entity.setTotalTest("80");
+		entity.setFirstTest(form.getMathematicsFirst());
+		entity.setFirstTest5(form.getMathematicsFirst5());
+		entity.setSecondTest(form.getMathematicsSecond());
+		entity.setSecondTest5(form.getMathematicsSecond5());
+		entity.setNotebook(form.getMathematicsNotebook());
+		entity.setActivity(form.getMathematicsActivity());
+		entity.setTotalMarks(form.getMathematicsTotalMarks());
+		entity = marksRepository.save(entity);
+
+		entity = new MarksEntity();
+		entity.setRollNumber(form.getRollNumber());
+		entity.setRegisterNumber(form.getRegisterNumber());
+		entity.setSubject("ScienceTechnology");
+		entity.setTotalTest("80");
+		entity.setFirstTest(form.getScienceTechnologyFirst());
+		entity.setFirstTest5(form.getScienceTechnologyFirst5());
+		entity.setSecondTest(form.getScienceTechnologySecond());
+		entity.setSecondTest5(form.getScienceTechnologySecond5());
+		entity.setNotebook(form.getScienceTechnologyNotebook());
+		entity.setActivity(form.getScienceTechnologyActivity());
+		entity.setTotalMarks(form.getScienceTechnologyTotalMarks());
+		entity = marksRepository.save(entity);
+
+		entity = new MarksEntity();
+		entity.setRollNumber(form.getRollNumber());
+		entity.setRegisterNumber(form.getRegisterNumber());
+		entity.setSubject("Computer");
+		entity.setTotalTest("80");
+		entity.setFirstTest(form.getComputerFirst());
+		entity.setFirstTest5(form.getComputerFirst5());
+		entity.setSecondTest(form.getComputerSecond());
+		entity.setSecondTest5(form.getComputerSecond5());
+		entity.setNotebook(form.getComputerNotebook());
+		entity.setActivity(form.getComputerActivity());
+		entity.setTotalMarks(form.getComputerTotalMarks());
+		entity = marksRepository.save(entity);
+
+		entity = new MarksEntity();
+		entity.setRollNumber(form.getRollNumber());
+		entity.setRegisterNumber(form.getRegisterNumber());
+		entity.setSubject("Drawing");
+		entity.setTotalTest("80");
+		entity.setFirstTest(form.getDrawingFirst());
+		entity.setFirstTest5(form.getDrawingFirst5());
+		entity.setSecondTest(form.getDrawingSecond());
+		entity.setSecondTest5(form.getDrawingSecond5());
+		entity.setNotebook(form.getDrawingNotebook());
+		entity.setActivity(form.getDrawingActivity());
+		entity.setTotalMarks(form.getDrawingTotalMarks());
+		entity = marksRepository.save(entity);
+
+		if (entity.getRegisterNumber() != null) {
+			response.setStatus(200);
+			response.setType(ResponseType.SUCCESS);
+			response.setMessage("Student Marks Added");
+			return response;
+		}
+		return response;
+	}
+
+	public BaseResponse addMarksB(MarksForm form) {
 		BaseResponse response = new BaseResponse();
 
 		List<MarksEntity> check = marksRepository.findByRegisterNumber(form.getRegisterNumber());
@@ -130,12 +250,27 @@ public class MarksService {
 
 	public BaseResponse getMarks() {
 		BaseResponse response = new BaseResponse();
+		List<MarksEntity> list = marksRepository.findAll();
+		List<MarksEntity> array = new ArrayList<>();
+		for (MarksEntity marksEntity : list) {
+			if (!checkA(array, marksEntity)) {
+				array.add(marksEntity);
+			}
+		}
 		response.setStatus(200);
 		response.setType(ResponseType.SUCCESS);
 		response.setMessage("Student Marks");
-
-		response.setBody(marksRepository.findAll());
+		response.setBody(array);
 		return response;
+	}
+
+	public boolean checkA(List<MarksEntity> array, MarksEntity entity) {
+		for (MarksEntity marksEntity : array) {
+			if (marksEntity.getRegisterNumber().equals(entity.getRegisterNumber())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public BaseResponse deleteMarks(String registerNumber) {
