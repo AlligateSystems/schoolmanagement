@@ -5,13 +5,13 @@
 <head th:fragment="headFragment (pageTitle)">
 		<title>[[${pageTitle}]]</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" th:href="@{plugins/font-awesome/css/font-awesome.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{dist/css/adminlte.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{plugins/SweetAlert2/sweetalert2.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{plugins/datatables/jquery.dataTables.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{plugins/datatables/extensions/Responsive/css/dataTables.responsive.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{plugins/select2/select2.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{../plugins/font-awesome/css/font-awesome.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{../dist/css/adminlte.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{../plugins/SweetAlert2/sweetalert2.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{../plugins/datatables/jquery.dataTables.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{../plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{../plugins/datatables/extensions/Responsive/css/dataTables.responsive.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{../plugins/select2/select2.min.css}"/>
 </head>
 
 	<th:block th:fragment="navbar">
@@ -55,6 +55,29 @@
 	                    </a>
 	                </li>
 	            </ul>
+	        </nav>
+	    </div>
+	</aside>
+</th:block>
+
+
+
+<th:block th:fragment="sidebar_school1">
+	<aside class="main-sidebar sidebar-dark-primary elevation-4">
+	    <!-- Brand Logo -->
+	    <a href="#" class="brand-link">
+	        <span class="brand-text"><span class="font-weight-bold">School Management<br> System 1</span></span>
+	    </a>
+	    <div class="sidebar">
+	        <nav class="mt-2">
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview menu-open">
+	                    <a href="/" class="nav-link active">
+	                        <i class="nav-icon fa fa-dashboard"></i>
+	                        <span>Dashboard</span>
+	                    </a>
+	                </li>
+	            </ul>
 	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 	                <li class="nav-item has-treeview">
 	                    <a href="#" class="nav-link">
@@ -70,13 +93,13 @@
 <!-- 	                        </li> -->
 	
 	                        <li class="nav-item">
-	                            <a href="student" class="nav-link">
+	                            <a href="/school1/student_add" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>Add</span>
 	                            </a>
 	                        </li>
 	                        <li class="nav-item">
-	                            <a href="student" class="nav-link">
+	                            <a href="/school1/student_view" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>View</span>
 	                            </a>
@@ -92,25 +115,25 @@
 	                    </a>
 	                    <ul class="nav nav-treeview">
 	                        <li class="nav-item">
-	                            <a href="marks_a" class="nav-link">
+	                            <a href="/school1/marks_a" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>Add Marks (8-9-10)</span>
 	                            </a>
 	                        </li>
 	                        <li class="nav-item">
-	                            <a href="marks_b" class="nav-link">
+	                            <a href="/school1/marks_b" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>Add Marks (11-12)</span>
 	                            </a>
 	                        </li>
 	                        <li class="nav-item">
-	                            <a href="attendance" class="nav-link">
+	                            <a href="/school1/attendance" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>Add Attendance</span>
 	                            </a>
 	                        </li>
 	                        <li class="nav-item">
-	                            <a href="attendance" class="nav-link">
+	                            <a href="/school1/marks_view" class="nav-link">
 	                                <i class="fa fa-edit nav-icon"></i>
 	                                <span>View/Print</span>
 	                            </a>
@@ -144,7 +167,229 @@
 	    </div>
 	</aside>
 </th:block>
+
+
+
+
+<th:block th:fragment="sidebar_school2">
+	<aside class="main-sidebar sidebar-dark-primary elevation-4">
+	    <!-- Brand Logo -->
+	    <a href="#" class="brand-link">
+	        <span class="brand-text"><span class="font-weight-bold">School Management<br> System 2</span></span>
+	    </a>
+	    <div class="sidebar">
+	        <nav class="mt-2">
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview menu-open">
+	                    <a href="/" class="nav-link active">
+	                        <i class="nav-icon fa fa-dashboard"></i>
+	                        <span>Dashboard</span>
+	                    </a>
+	                </li>
+	            </ul>
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview">
+	                    <a href="#" class="nav-link">
+	                        <i class="nav-icon fa fa-wpforms"></i>
+	                        <p>Student Registration<i class="right fa fa-angle-left"></i></p>
+	                    </a>
+	                    <ul class="nav nav-treeview">
+<!-- 	                        <li class="nav-item"> -->
+<!-- 	                            <a href="school" class="nav-link"> -->
+<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
+<!-- 	                                <span>Add School</span> -->
+<!-- 	                            </a> -->
+<!-- 	                        </li> -->
 	
+	                        <li class="nav-item">
+	                            <a href="/school2/student_add" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school2/student_view" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>View</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview">
+	                    <a href="#" class="nav-link">
+	                        <i class="nav-icon fa fa-wpforms"></i>
+	                        <p>Result<i class="right fa fa-angle-left"></i></p>
+	                    </a>
+	                    <ul class="nav nav-treeview">
+	                        <li class="nav-item">
+	                            <a href="/school2/marks_a" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add Marks (8-9-10)</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school2/marks_b" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add Marks (11-12)</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school2/attendance" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add Attendance</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school2/marks_view" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>View/Print</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview">
+	                    <a href="#" class="nav-link">
+	                        <i class="nav-icon fa fa-wpforms"></i>
+	                        <p>Documents<i class="right fa fa-angle-left"></i></p>
+	                    </a>
+	                    <ul class="nav nav-treeview">
+	                        <li class="nav-item">
+	                            <a href="bonafide" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Bonafide Certificate</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="result" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Result Certificate</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </nav>
+	    </div>
+	</aside>
+</th:block>
+
+
+
+	<th:block th:fragment="sidebar_school3">
+	<aside class="main-sidebar sidebar-dark-primary elevation-4">
+	    <!-- Brand Logo -->
+	    <a href="#" class="brand-link">
+	        <span class="brand-text"><span class="font-weight-bold">School Management<br> System 3</span></span>
+	    </a>
+	    <div class="sidebar">
+	        <nav class="mt-2">
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview menu-open">
+	                    <a href="/" class="nav-link active">
+	                        <i class="nav-icon fa fa-dashboard"></i>
+	                        <span>Dashboard</span>
+	                    </a>
+	                </li>
+	            </ul>
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview">
+	                    <a href="#" class="nav-link">
+	                        <i class="nav-icon fa fa-wpforms"></i>
+	                        <p>Student Registration<i class="right fa fa-angle-left"></i></p>
+	                    </a>
+	                    <ul class="nav nav-treeview">
+<!-- 	                        <li class="nav-item"> -->
+<!-- 	                            <a href="school" class="nav-link"> -->
+<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
+<!-- 	                                <span>Add School</span> -->
+<!-- 	                            </a> -->
+<!-- 	                        </li> -->
+	
+	                        <li class="nav-item">
+	                            <a href="/school3/student_add" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school3/student_view" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>View</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview">
+	                    <a href="#" class="nav-link">
+	                        <i class="nav-icon fa fa-wpforms"></i>
+	                        <p>Result<i class="right fa fa-angle-left"></i></p>
+	                    </a>
+	                    <ul class="nav nav-treeview">
+	                        <li class="nav-item">
+	                            <a href="/school3/marks_a" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add Marks (8-9-10)</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school3/marks_b" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add Marks (11-12)</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school3/attendance" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Add Attendance</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school3/marks_view" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>View/Print</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	                <li class="nav-item has-treeview">
+	                    <a href="#" class="nav-link">
+	                        <i class="nav-icon fa fa-wpforms"></i>
+	                        <p>Documents<i class="right fa fa-angle-left"></i></p>
+	                    </a>
+	                    <ul class="nav nav-treeview">
+	                        <li class="nav-item">
+	                            <a href="/school3/bonafide" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Bonafide Certificate</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school3/leaving" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>Leaving Certificate</span>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a href="/school3/trial" class="nav-link">
+	                                <i class="fa fa-edit nav-icon"></i>
+	                                <span>TRIAL Certificate</span>
+	                            </a>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </nav>
+	    </div>
+	</aside>
+</th:block>
 	
 	
 <th:block th:fragment="footer">
@@ -156,17 +401,17 @@
 
 
 <th:block th:fragment="jsscript">
-	<script type="text/javascript" th:src="@{plugins/jquery/jquery.js}"></script>
-	<script type="text/javascript" th:src="@{plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
-	<script type="text/javascript" th:src="@{dist/js/adminlte.js}"></script>
-	<script type="text/javascript" th:src="@{dist/js/demo.js}"></script>
-	<script type="text/javascript" th:src="@{plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
-	<script type="text/javascript" th:src="@{plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
-	<script type="text/javascript" th:src="@{plugins/slimScroll/jquery.slimscroll.min.js}"></script>
-	<script type="text/javascript" th:src="@{plugins/datatables/jquery.dataTables.js}"></script>
-	<script type="text/javascript" th:src="@{plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js}"></script>
-	<script type="text/javascript" th:src="@{plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js}"></script>
-	<script type="text/javascript" th:src="@{plugins/SweetAlert2/sweetalert2.min.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/jquery/jquery.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript" th:src="@{../dist/js/adminlte.js}"></script>
+	<script type="text/javascript" th:src="@{../dist/js/demo.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/slimScroll/jquery.slimscroll.min.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/datatables/jquery.dataTables.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js}"></script>
+	<script type="text/javascript" th:src="@{../plugins/SweetAlert2/sweetalert2.min.js}"></script>
 </th:block>
 
 

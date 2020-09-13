@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head th:include="template :: headFragment(${pageTitle})"></head>
+    <style>
+        .custom-select {
+            background: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div th:replace="template :: navbar"></div>
+        <div th:replace="template :: sidebar_school1"></div>
+
+        <!-- ------------------Work Below------------------ -->
+        <div class="content-wrapper">
+            <div class="content-header"></div>
+            <section class="content">
+                <div class="container-fluid">
+
+                    <!-- Form Fields -->
+					<div class="card card-primary">
+						<div class="card-header">Get Result (8-9-10 Standard)</div>
+						<div class="card-body">
+							<form class="" id="CustomeForm" method="post">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group d-none">
+											<label>ID</label> <input class="form-control" id="id"
+												name="id">
+										</div>
+									</div>
+
+									<div class="col-xl-6 col-lg-6 col-12 form-group">
+										<label>Register Number *</label> <input type="text"
+											id="registerNumberA" name="registerNumberA"
+											placeholder="Register Number" class="form-control">
+									</div>
+
+									<div class="col-12 form-group mg-t-8">
+										<button id="btnSubmitA" type="button" class="btn btn-primary">Submit</button>
+										<!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
+										<button id="btnReset" type="reset" class="btn btn-danger">Reset</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- Form Fields -->
+
+					<!-- Form Fields -->
+					<div class="card card-primary">
+						<div class="card-header">Get Result (11-12 Standard)</div>
+						<div class="card-body">
+							<form class="" id="CustomeForm" method="post">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group d-none">
+											<label>ID</label> <input class="form-control" id="id"
+												name="id">
+										</div>
+									</div>
+
+									<div class="col-xl-6 col-lg-6 col-12 form-group">
+										<label>Register Number *</label> <input type="text"
+											id="registerNumberB" name="registerNumberB"
+											placeholder="Register Number" class="form-control">
+									</div>
+
+									<div class="col-12 form-group mg-t-8">
+										<button id="btnSubmitB" type="button" class="btn btn-primary">Submit</button>
+										<!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
+										<button id="btnReset" type="reset" class="btn btn-danger">Reset</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- Form Fields -->
+
+                    <!-- Data Table -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h4 class="float-left">Students</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="customTable" class="table display data-table text-nowrap">
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+        </div>
+        <!-- ------------------Work Above ------------------ -->
+        
+    </div>
+    <div th:replace="template :: jsscript"></div>
+    
+    
+   <script>
+    $(document).ready(function() {
+    	
+    	$('#btnSubmitA').on('click', function() {
+			window.location.href = '/school1/result/8_9_10/'+ $("#registerNumberA").val();
+		});
+		$('#btnSubmitB').on('click', function() {
+			window.location.href = '/school1/result/11_12/'+ $("#registerNumberB").val();
+		});
+    	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	$('#btnReset').on('click', function() {
+    		$("#btnSubmit").html('Submit');
+    		$('#id').val("");
+    	});
+    	
+        $('#btnSubmit').on('click', function() {
+            var formData = $('#CustomeForm').serialize();
+         $.ajax({
+                url: '/school1/marks/marks_a',
+                method: 'POST',
+                data: formData,
+                cache: false,
+                processData: false
+            }).done( function(data) {
+                 if (data.status == 200) {
+                    swal({
+                        title: "Alert !",
+                        text: data.message,
+                        type: data.type,
+                        width: 300,
+                        showCancelButton: !0,
+                        confirmButtonText: 'OK',
+                        cancelButtonClass: "btn btn-danger m-l-10",
+                        preConfirm: function() {
+                        	window.location.href = window.location;
+                        }
+                    });
+                } else {
+                    swal({
+                        title: "Error !",
+                        text: "Something Wents Wrong !",
+                        type: "error",
+                        width: 300,
+                        showCancelButton: !0,
+                        confirmButtonText: 'OK',
+                        cancelButtonClass: "btn btn-danger m-l-10"
+                    });
+                } 
+            });  
+            
+        });
+    	
+        
+        
+    	
+    	
+    	 $.ajax({
+			type : 'POST',
+			url : '/school1/marks/getAll',
+			dataType : 'json',
+		}).done(function(data) {
+			var mainData  = data.body;
+			 table=$("#customTable").DataTable( {
+						data : mainData,
+						columns : [ 
+							{ title : "Register Number" ,  "data": "registerNumber"  },
+							{ title : "Roll Number" ,  "data": "rollNumber"  },
+							{
+								title : "Action",
+				                "orderable":      false,
+				                "defaultContent": '<span class="float-right"><button id="edit" type="button" class="btn btn-warning"><i class="fa fa-print"></i></button>  <button id="delete" type="button" class="btn btn-danger"><i class="fa fa-trash"></button></span>'
+				            },
+							],
+					});
+		}); 
+    	
+    	/* //edit
+    	$('#customTable tbody').on('click', '#edit', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row( tr );
+            $('#id').val(row.data().id);
+            $('#firstName').val(row.data().firstName);
+            $('#middleName').val(row.data().middleName);
+            $('#lastName').val(row.data().lastName);
+            $('#gender').val(row.data().gender);
+            $('#birthPlace').val(row.data().birthPlace);
+            $('#dateOfBirth').val(row.data().dateOfBirth);
+            $('#fatherName').val(row.data().fatherName);
+            $('#motherName').val(row.data().motherName);
+            $('#occupation').val(row.data().occupation);
+            $('#caste').val(row.data().caste);
+            $('#address').val(row.data().address);
+            $('#contactNumber').val(row.data().contactNumber);
+            $('#email').val(row.data().email);
+            $('#registerNumber').val(row.data().registerNumber);
+            $('#classIn').val(row.data().classIn);
+            $('#sectionIn').val(row.data().sectionIn);
+            $('#rollNumber').val(row.data().rollNumber);
+            $('#bloodGroup').val(row.data().bloodGroup);
+            $("#btnSubmit").html('Update');
+            window.scrollTo(0, 0); 
+        }); */
+    	
+        
+    	 //delete
+     	$('#customTable tbody').on('click', '#delete', function () {
+     		
+             var tr = $(this).closest('tr');
+             var row = table.row(tr);
+             swal({
+                 title: "Are you sure?",
+                 text: "You want to delete?<br>",
+                 type: "warning",
+                 width: 310,
+                 showCancelButton: !0,
+                 confirmButtonClass: "btn btn-success",
+                 cancelButtonClass: "btn btn-danger m-l-10",
+                 confirmButtonText: "Delete it!"
+             }).then(function () {
+                 $.ajax({
+                     type: 'POST',
+                     url: '/school1/marks/delete/'+row.data().registerNumber,
+                     cache: false,
+                     processData: false
+                 }).done(function (data) {
+                 	console.log(data)
+                 	if (data.status == 200) {
+                         swal({
+                         	title: "Alert !",
+                             text: data.message,
+                             type: data.type,
+                             width: 300,
+                             showCancelButton: !0,
+                             confirmButtonText: 'OK',
+                             cancelButtonClass: "btn btn-danger m-l-10",
+                             preConfirm : function() {
+     							window.location.href = window.location;
+     						}
+                         });
+                     } else {
+                         swal({
+                         	title: "Error !",
+                             text: "Something Wents Wrong !",
+                             type: "error",
+                             width: 300,
+                             showCancelButton: !0,
+                             confirmButtonText: 'OK',
+                             cancelButtonClass: "btn btn-danger m-l-10"
+                         });
+                     }
+                 });
+             });
+         }); 
+    	
+    	
+       
+        
+    });
+    </script>
+    
+ <div th:replace="template :: footer"></div>   
+</body>
+</html>

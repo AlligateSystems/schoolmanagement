@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head th:include="template :: headFragment(${pageTitle})"></head>
+    <style>
+        .custom-select {
+            background: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div th:replace="template :: navbar"></div>
+        <div th:replace="template :: sidebar_school2"></div>
+
+        <!-- ------------------Work Below------------------ -->
+        <div class="content-wrapper">
+            <div class="content-header"></div>
+            <section class="content">
+                <div class="container-fluid">
+
+                    <!-- Form Fields -->
+                    <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog  modal-dialog-centered" role="document">
+					    <div class="modal-content card-primary  card-outline">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLabel">Brand</h5>
+					      </div>
+					      <div class="modal-body">
+					      <form class="" id="StudentForm" method="post">
+                                <div class="row">
+                                	<div class="col-md-12">
+										<div class="form-group d-none">
+											<label>ID</label> <input class="form-control" id="id" name="id">
+										</div>
+									</div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>First Name *</label>
+                                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Middle Name *</label>
+                                        <input type="text" id="middleName" name="middleName" placeholder="Middle Name" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Last Name *</label>
+                                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Gender *</label>
+                                        <select class="custom-select" id="gender" name="gender">
+                                            <option value="">Please Select Gender *</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Others">Others</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Birth Place *</label>
+                                        <input type="text" id="birthPlace" name="birthPlace" placeholder="Birthplace" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Date Of Birth *</label>
+                                        <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="dd/mm/yyyy" class="form-control">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Father's Name *</label>
+                                        <input type="text" id="fatherName" name="fatherName" placeholder="Father's Name" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Mother's Name *</label>
+                                        <input type="text" id="motherName" name="motherName" placeholder="Mother's Name" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Parents Occupation *</label>
+                                        <input type="text" id="occupation" name="occupation" placeholder="Parents Occupation" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Religion *</label>
+                                        <select class="custom-select" id="caste" name="caste">
+                                            <option value="">Please Select Religion *</option>
+                                            <option value="Islam">Islam</option>
+                                            <option value="Hindu">Hindu</option>
+                                            <option value="Christian">Christian</option>
+                                            <option value="Buddish">Buddish</option>
+                                            <option value="Others">Others</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Address *</label>
+                                        <input type="text" id="address" name="address" placeholder="Address" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Contact Number *</label>
+                                        <input type="text" id="contactNumber" name="contactNumber" placeholder="Contact Number" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Email *</label>
+                                        <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Register Number *</label>
+                                        <input type="text" id="registerNumber" name="registerNumber" placeholder="Register Number" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+	                                    <label>Class *</label>
+	                                    <select class="custom-select" id="classIn" name="classIn">
+	                                        <option value="">Please Select Class *</option>
+	                                        <option value="1">1</option>
+	                                        <option value="2">2</option>
+	                                        <option value="3">3</option>
+	                                        <option value="4">4</option>
+	                                        <option value="5">5</option>
+	                                        <option value="6">6</option>
+	                                        <option value="7">7</option>
+	                                        <option value="8">8</option>
+	                                        <option value="9">9</option>
+	                                        <option value="10">10</option>
+	                                        <option value="11">11</option>
+	                                        <option value="12">12</option>
+	                                    </select>
+                                	</div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Roll Number *</label>
+                                        <input type="text" id="rollNumber" name="rollNumber" placeholder="Roll Number" class="form-control">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                    <label>Blood Group *</label>
+                                    <select class="custom-select" id="bloodGroup" name="bloodGroup">
+                                        <option value="">Please Select Group *</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                    </select>
+                                </div>
+                                    <div class="col-12 form-group mg-t-8">
+                                        <button id="btnSubmit" type="button" class="btn btn-primary">Submit</button>
+                                        <!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
+                                        <button id="btnReset" type="reset" class="btn btn-danger">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					<!-- Form Fields -->
+
+                    <!-- Data Table -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h4 class="float-left">Students List</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="customTable" class="table display data-table text-nowrap">
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+					 <!-- Data Table -->
+
+                </div>
+            </section>
+        </div>
+        <!-- ------------------Work Above ------------------ -->
+        
+    </div>
+    <div th:replace="template :: jsscript"></div>
+    
+    
+    <script>
+    $(document).ready(function() {
+    	$.ajax({
+			type : 'POST',
+			url : '/school2/student/getAll',
+			dataType : 'json',
+		}).done(function(data) {
+			var mainData  = data.body;
+			 table=$("#customTable").DataTable( {
+						data : mainData,
+						columns : [ 
+							{ title : "Register Number" ,  "data": "registerNumber"  },
+							{ title : "Roll Number" ,  "data": "rollNumber"  },
+							{ title : "Name" ,  "data": "fullName"  },
+							{ title : "Gender" ,  "data": "gender"  },
+							{ title : "Class" ,  "data": "classIn"  },
+							{ title : "Address" ,  "data": "address"  },
+							{ title : "DOB" ,  "data": "dateOfBirth"  },
+							{ title : "Contact Number",  "data": "contactNumber" },
+							{ title : "Email",  "data": "email" },
+							{
+								title : "Action",
+				                "orderable":      false,
+				                "defaultContent": '<span class="float-right"><button id="edit" type="button" class="btn btn-warning"><i class="fa fa-pencil"></i></button>  <button id="delete" type="button" class="btn btn-danger"><i class="fa fa-trash"></button></span>'
+				            },
+							],
+					});
+		}); 
+    	
+    	//edit
+    	$('#customTable tbody').on('click', '#edit', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row( tr );
+            $('#id').val(row.data().id);
+            $('#firstName').val(row.data().firstName);
+            $('#middleName').val(row.data().middleName);
+            $('#lastName').val(row.data().lastName);
+            $('#gender').val(row.data().gender);
+            $('#birthPlace').val(row.data().birthPlace);
+            $('#dateOfBirth').val(row.data().dateOfBirth);
+            $('#fatherName').val(row.data().fatherName);
+            $('#motherName').val(row.data().motherName);
+            $('#occupation').val(row.data().occupation);
+            $('#caste').val(row.data().caste);
+            $('#address').val(row.data().address);
+            $('#contactNumber').val(row.data().contactNumber);
+            $('#email').val(row.data().email);
+            $('#registerNumber').val(row.data().registerNumber);
+            $('#classIn').val(row.data().classIn);
+            $('#rollNumber').val(row.data().rollNumber);
+            $('#bloodGroup').val(row.data().bloodGroup);
+            $("#btnSubmit").html('Update');
+            window.scrollTo(0, 0); 
+            $('#FormModal').modal('show');
+        });
+    	
+    	//delete
+    	$('#customTable tbody').on('click', '#delete', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row(tr);
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete?<br>",
+                type: "warning",
+                width: 310,
+                showCancelButton: !0,
+                confirmButtonClass: "btn btn-success",
+                cancelButtonClass: "btn btn-danger m-l-10",
+                confirmButtonText: "Delete it!"
+            }).then(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '/school2/student/delete/'+row.data().id,
+                    cache: false,
+                    processData: false
+                }).done(function (data) {
+                	if (data.status == 200) {
+                        swal({
+                        	title: "Alert !",
+                            text: data.message,
+                            type: data.type,
+                            width: 300,
+                            showCancelButton: !0,
+                            confirmButtonText: 'OK',
+                            cancelButtonClass: "btn btn-danger m-l-10",
+                            preConfirm : function() {
+    							window.location.href = window.location;
+    						}
+                        });
+                    } else {
+                        swal({
+                        	title: "Error !",
+                            text: "Something Wents Wrong !",
+                            type: "error",
+                            width: 300,
+                            showCancelButton: !0,
+                            confirmButtonText: 'OK',
+                            cancelButtonClass: "btn btn-danger m-l-10"
+                        });
+                    }
+                });
+            });
+        });
+    	
+    	$('#btnReset').on('click', function() {
+    		$("#btnSubmit").html('Submit');
+    		$('#id').val("");
+    	});
+    	
+        $('#btnSubmit').on('click', function() {
+            var formData = $('#StudentForm').serialize();
+         $.ajax({
+                url: '/school2/student',
+                method: 'POST',
+                data: formData,
+                cache: false,
+                processData: false
+            }).done( function(data) {
+                 if (data.status == 200) {
+                    swal({
+                        title: "Alert !",
+                        text: data.message,
+                        type: data.type,
+                        width: 300,
+                        showCancelButton: !0,
+                        confirmButtonText: 'OK',
+                        cancelButtonClass: "btn btn-danger m-l-10",
+                        preConfirm: function() {
+                        	window.location.href = window.location;
+                        }
+                    });
+                } else {
+                    swal({
+                        title: "Error !",
+                        text: "Something Wents Wrong !",
+                        type: "error",
+                        width: 300,
+                        showCancelButton: !0,
+                        confirmButtonText: 'OK',
+                        cancelButtonClass: "btn btn-danger m-l-10"
+                    });
+                } 
+            }); 
+            
+        });
+       
+        
+    });
+    </script>
+    
+ <div th:replace="template :: footer"></div>     
+</body>
+</html>
