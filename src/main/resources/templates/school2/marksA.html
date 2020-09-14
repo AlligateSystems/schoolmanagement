@@ -24,7 +24,7 @@
 
                     <!-- Form Fields -->
                     <div class="card card-primary">
-                        <div class="card-header">Add Student Marks (8-9-10)</div>
+                        <div class="card-header"><h4>વિદ્યાર્થી ગુણ ઉમેરો (8-9-10)</h4></div>
                         <div class="card-body">
                             <form class="" id="CustomeForm" method="post">
                                 <div class="row">
@@ -35,97 +35,67 @@
 									</div>
 									
                                     <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>Register Number *</label>
+                                        <label>રજિસ્ટર નંબર  <span class="text-danger">*</span></label>
                                         <input type="text" id="registerNumber" name="registerNumber" placeholder="Register Number" class="form-control">
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>Roll Number *</label>
+                                        <label>રોલ નંબર</label>
                                         <input type="text" id="rollNumber" name="rollNumber" placeholder="Roll Number" class="form-control">
                                     </div>
                                     
                                     <table class="table">
 									  <thead>
 									    <tr>
-									      <th scope="col">Subject</th>
-									      <th scope="col">FirstTest<br>OF (80)</th>
-									      <th scope="col">FirstTest<br>OF (5)</th>
-									      <th scope="col">SecondTest<br>OF (80)</th>
-									      <th scope="col">SecondTest<br>OF (5)</th>
-									      <th scope="col">Notebook<br>OF (5)</th>
-									      <th scope="col">Activity<br>OF (5)</th>
-									      <th scope="col">Total Marks<br>OF (20)</th>
+									      <th scope="col">વિષય</th>
+									      <th scope="col">મેળવેલ ગ્રેડ</th>
+									      <th scope="col">મેળવેલ ગ્રેડ વિષયના સંદર્ભમાં વિશેષ નોંધ</th>
 									    </tr>
 									  </thead>
 									  <tbody>
 									    <tr>
-									      <td scope="row"><input type="text" id="" name="" placeholder="Subject" value="Gujrati" readonly class="form-control"></td>
-									      <td><input type="text" id="gujratiFirst" name="gujratiFirst"  class="form-control"></td>
-									      <td><input type="text" id="gujratiFirst5" name="gujratiFirst5"  class="form-control"></td>
-									      <td><input type="text" id="gujratiSecond" name="gujratiSecond"  class="form-control"></td>
-									      <td><input type="text" id="gujratiSecond5" name="gujratiSecond5"  class="form-control"></td>
-									      <td><input type="text" id="gujratiNotebook" name="gujratiNotebook"  class="form-control"></td>
-									      <td><input type="text" id="gujratiActivity" name="gujratiActivity"  class="form-control"></td>
-									      <td><input type="text" id="gujratiTotalMarks" name="gujratiTotalMarks"  class="form-control"></td>
+									      <td scope="row"><label>જાત સંભાળની આવડત</label></td>
+									      <td><input type="text" id="qualitySkillsGrade" name="qualitySkillsGrade"  class="form-control"></td>
+									      <td><input type="text" id="qualitySkillsNote" name="qualitySkillsNote"  class="form-control"></td>
 									    </tr>
 									    <tr>
-									      <td scope="row"><input type="text" id="" name="" placeholder="Subject" value="English" readonly class="form-control"></td>
-									      <td><input type="text" id="englishFirst" name="englishFirst"  class="form-control"></td>
-									      <td><input type="text" id="englishFirst5" name="englishFirst5"  class="form-control"></td>
-									      <td><input type="text" id="englishSecond" name="englishSecond"  class="form-control"></td>
-									      <td><input type="text" id="englishSecond5" name="englishSecond5"  class="form-control"></td>
-									      <td><input type="text" id="englishNotebook" name="englishNotebook"  class="form-control"></td>
-									      <td><input type="text" id="englishActivity" name="englishActivity"  class="form-control"></td>
-									      <td><input type="text" id="englishTotalMarks" name="englishTotalMarks"  class="form-control"></td>
+									      <td scope="row"><label>સામાન્ય જ્ઞાન</label></td>
+									      <td><input type="text" id="generalknowledgeGrade" name="generalknowledgeGrade"  class="form-control"></td>
+									      <td><input type="text" id="generalknowledgeNote" name="generalknowledgeNote"  class="form-control"></td>
 									    </tr>
 									    <tr>
-									      <td scope="row"><input type="text" id="" name="" placeholder="Subject" value="Social Science" readonly class="form-control"></td>
-									      <td><input type="text" id="socialScienceFirst" name="socialScienceFirst"  class="form-control"></td>
-									      <td><input type="text" id="socialScienceFirst5" name="socialScienceFirst5"  class="form-control"></td>
-									      <td><input type="text" id="socialScienceSecond" name="socialScienceSecond"  class="form-control"></td>
-									      <td><input type="text" id="socialScienceSecond5" name="socialScienceSecond5"  class="form-control"></td>
-									      <td><input type="text" id="socialScienceNotebook" name="socialScienceNotebook"  class="form-control"></td>
-									      <td><input type="text" id="socialScienceActivity" name="socialScienceActivity"  class="form-control"></td>
-									      <td><input type="text" id="socialScienceTotalMarks" name="socialScienceTotalMarks"  class="form-control"></td>
+									      <td scope="row"><label>ભાષા </label></td>
+									      <td><input type="text" id="languageGrade" name="languageGrade"  class="form-control"></td>
+									      <td><input type="text" id="languageNote" name="languageNote"  class="form-control"></td>
 									    </tr>
 									    <tr>
-									      <td scope="row"><input type="text" id="" name="" placeholder="Subject" value="Mathematics" readonly class="form-control"></td>
-									      <td><input type="text" id="mathematicsFirst" name="mathematicsFirst"  class="form-control"></td>
-									      <td><input type="text" id="mathematicsFirst5" name="mathematicsFirst5"  class="form-control"></td>
-									      <td><input type="text" id="mathematicsSecond" name="mathematicsSecond"  class="form-control"></td>
-									      <td><input type="text" id="mathematicsSecond5" name="mathematicsSecond5"  class="form-control"></td>
-									      <td><input type="text" id="mathematicsNotebook" name="mathematicsNotebook"  class="form-control"></td>
-									      <td><input type="text" id="mathematicsActivity" name="mathematicsActivity"  class="form-control"></td>
-									      <td><input type="text" id="mathematicsTotalMarks" name="mathematicsTotalMarks"  class="form-control"></td>
+									      <td scope="row"><label>ગણિત</label></td>
+									      <td><input type="text" id="mathematicsGrade" name="mathematicsGrade"  class="form-control"></td>
+									      <td><input type="text" id="mathematicsNote" name="mathematicsNote"  class="form-control"></td>
 									    </tr>
 									    <tr>
-									      <td scope="row"><input type="text" id="" name="" placeholder="Subject" value="Science and Technology" readonly class="form-control"></td>
-									      <td><input type="text" id="scienceTechnologyFirst" name="scienceTechnologyFirst"  class="form-control"></td>
-									      <td><input type="text" id="scienceTechnologyFirst5" name="scienceTechnologyFirst5"  class="form-control"></td>
-									      <td><input type="text" id="scienceTechnologySecond" name="scienceTechnologySecond"  class="form-control"></td>
-									      <td><input type="text" id="scienceTechnologySecond5" name="scienceTechnologySecond5"  class="form-control"></td>
-									      <td><input type="text" id="scienceTechnologyNotebook" name="scienceTechnologyNotebook"  class="form-control"></td>
-									      <td><input type="text" id="scienceTechnologyActivity" name="scienceTechnologyActivity"  class="form-control"></td>
-									      <td><input type="text" id="scienceTechnologyTotalMarks" name="scienceTechnologyTotalMarks"  class="form-control"></td>
+									      <td scope="row"><label>પર્યાવરણ/વિજ્ઞાન</label></td>
+									     <td><input type="text" id="environmentScienceGrade" name="environmentScienceGrade"  class="form-control"></td>
+									      <td><input type="text" id="environmentScienceNote" name="environmentScienceNote"  class="form-control"></td>
 									    </tr>
 									    <tr>
-									      <td scope="row"><input type="text" id="" name="" placeholder="Subject" value="Computer" readonly class="form-control"></td>
-									      <td><input type="text" id="computerFirst" name="computerFirst"  class="form-control"></td>
-									      <td><input type="text" id="computerFirst5" name="computerFirst5"  class="form-control"></td>
-									      <td><input type="text" id="computerSecond" name="computerSecond"  class="form-control"></td>
-									      <td><input type="text" id="computerSecond5" name="computerSecond5"  class="form-control"></td>
-									      <td><input type="text" id="computerNotebook" name="computerNotebook"  class="form-control"></td>
-									      <td><input type="text" id="computerActivity" name="computerActivity"  class="form-control"></td>
-									      <td><input type="text" id="computerTotalMarks" name="computerTotalMarks"  class="form-control"></td>
+									      <td scope="row"><label>ચિત્રકામ</label></td>
+									      <td><input type="text" id="drawingGrade" name="drawingGrade"  class="form-control"></td>
+									      <td><input type="text" id="drawingNote" name="drawingNote"  class="form-control"></td>
 									    </tr>
 									    <tr>
-									      <td scope="row"><input type="text" id="" name="" placeholder="Subject" value="Drawing" readonly class="form-control"></td>
-										  <td><input type="text" id="drawingFirst" name="drawingFirst"  class="form-control"></td>
-									      <td><input type="text" id="drawingFirst5" name="drawingFirst5"  class="form-control"></td>
-									      <td><input type="text" id="drawingSecond" name="drawingSecond"  class="form-control"></td>
-									      <td><input type="text" id="drawingSecond5" name="drawingSecond5"  class="form-control"></td>
-									      <td><input type="text" id="drawingNotebook" name="drawingNotebook"  class="form-control"></td>
-									      <td><input type="text" id="drawingActivity" name="drawingActivity"  class="form-control"></td>
-									      <td><input type="text" id="drawingTotalMarks" name="drawingTotalMarks"  class="form-control"></td>
+									      <td scope="row"><label>શારીરિક શિક્ષણ</label></td>
+										  <td><input type="text" id="physicalEducationGrade" name="physicalEducationGrade"  class="form-control"></td>
+									      <td><input type="text" id="physicalEducationNote" name="physicalEducationNote"  class="form-control"></td>
+									    </tr>
+									    <tr>
+									      <td scope="row"><label>સંગીત</label></td>
+										  <td><input type="text" id="musicGrade" name="musicGrade"  class="form-control"></td>
+									      <td><input type="text" id="musicNote" name="musicNote"  class="form-control"></td>
+									    </tr>
+									    <tr>
+									      <td scope="row"><label>કુલ...</label></td>
+										  <td><input type="text" id="totalGrade" name="totalGrade"  class="form-control"></td>
+									      <td><input type="text" id="totalNote" name="totalNote"  class="form-control"></td>
 									    </tr>
 									    
 									    
@@ -147,7 +117,7 @@
                     <!-- Data Table -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4 class="float-left">Students</h4>
+                            <h4 class="float-left">વિદ્યાર્થી યાદી</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -228,8 +198,8 @@
 			 table=$("#customTable").DataTable( {
 						data : mainData,
 						columns : [ 
-							{ title : "Register Number" ,  "data": "registerNumber"  },
-							{ title : "Roll Number" ,  "data": "rollNumber"  },
+							{ title : "રજિસ્ટર નંબર" ,  "data": "registerNumber"  },
+							{ title : "રોલ નંબર" ,  "data": "rollNumber"  },
 							{
 								title : "Action",
 				                "orderable":      false,

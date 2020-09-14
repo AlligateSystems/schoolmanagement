@@ -35,7 +35,7 @@ public class School3_MarksController {
 	@GetMapping("school3/marks_view")
 	public ModelAndView marks_view() {
 		ModelAndView modelAndView = new ModelAndView("school3/marks_view");
-		modelAndView.addObject("pageTitle", "Add Marks");
+		modelAndView.addObject("pageTitle", "View/Print Marks");
 		return modelAndView;
 	}
 

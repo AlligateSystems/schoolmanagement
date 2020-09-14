@@ -24,7 +24,7 @@
 
                     <!-- Form Fields -->
 					<div class="card card-primary">
-						<div class="card-header">Get Result (8-9-10 Standard)</div>
+						<div class="card-header"><h4 class="float-left">પરિણામ મેળવો (8-9-10 ધોરણ)</h4></div>
 						<div class="card-body">
 							<form class="" id="CustomeForm" method="post">
 								<div class="row">
@@ -36,7 +36,7 @@
 									</div>
 
 									<div class="col-xl-6 col-lg-6 col-12 form-group">
-										<label>Register Number *</label> <input type="text"
+										<label>રજિસ્ટર નંબર *</label> <input type="text"
 											id="registerNumberA" name="registerNumberA"
 											placeholder="Register Number" class="form-control">
 									</div>
@@ -54,7 +54,7 @@
 
 					<!-- Form Fields -->
 					<div class="card card-primary">
-						<div class="card-header">Get Result (11-12 Standard)</div>
+						<div class="card-header"><h4 class="float-left">પરિણામ મેળવો (11-12 ધોરણ)</h4></div>
 						<div class="card-body">
 							<form class="" id="CustomeForm" method="post">
 								<div class="row">
@@ -66,7 +66,7 @@
 									</div>
 
 									<div class="col-xl-6 col-lg-6 col-12 form-group">
-										<label>Register Number *</label> <input type="text"
+										<label>રજિસ્ટર નંબર *</label> <input type="text"
 											id="registerNumberB" name="registerNumberB"
 											placeholder="Register Number" class="form-control">
 									</div>
@@ -85,7 +85,7 @@
                     <!-- Data Table -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4 class="float-left">Students</h4>
+                            <h4 class="float-left">વિદ્યાર્થીઓ સંગ્રહને માર્ક કરે છે</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -170,11 +170,12 @@
 			dataType : 'json',
 		}).done(function(data) {
 			var mainData  = data.body;
+			console.log(mainData)
 			 table=$("#customTable").DataTable( {
 						data : mainData,
 						columns : [ 
-							{ title : "Register Number" ,  "data": "registerNumber"  },
-							{ title : "Roll Number" ,  "data": "rollNumber"  },
+							{ title : "રજિસ્ટર નંબર" ,  "data": "registerNumber"  },
+							{ title : "રોલ નંબર" ,  "data": "rollNumber"  },
 							{
 								title : "Action",
 				                "orderable":      false,

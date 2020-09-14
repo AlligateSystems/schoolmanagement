@@ -21,18 +21,7 @@ public class School2_MarksEntity {
 	private int id;
 	private String rollNumber;
 	private String registerNumber;
-	private String subject;//
-	private String totalTest; //
-	private String firstTest; //
-	private String secondTest; //
-	private String finalTotal;
-	private String finalTest;
-	private String condonedMarks;
-	private String gracePoints;
-	
-	private String firstTest5;
-	private String secondTest5;
-	private String notebook;
-	private String activity;
-	private String totalMarks;
+	private String subject;
+	private String grade;
+	private String note;
 }

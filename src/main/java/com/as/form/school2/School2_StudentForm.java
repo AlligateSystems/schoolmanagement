@@ -26,5 +26,12 @@ public class School2_StudentForm {
 	private String classIn;
 	private String rollNumber;
 	private String bloodGroup;
+	
+	private String age;
+	private String weight;
+	private String height;
+	private String iQ;
+	private String evaluationdate;
+	private String dateInserted;
 
 }
