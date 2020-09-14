@@ -53,7 +53,7 @@ public class School3_TrialController {
 		School3_StudentEntity student = repository.findByRegisterNumber(registerNumber);
 		try {
 			XWPFDocument doc = new XWPFDocument(OPCPackage
-					.open(ResourceUtils.getFile(env.getProperty("school1.trial_certificate.doc.filePath"))));
+					.open(ResourceUtils.getFile(env.getProperty("school3.trial_certificate.doc.filePath"))));
 			
 			for (XWPFParagraph p : doc.getParagraphs()) {
 				for (XWPFRun r : p.getRuns()) {

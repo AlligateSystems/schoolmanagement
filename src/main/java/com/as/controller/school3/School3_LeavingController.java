@@ -53,7 +53,7 @@ public class School3_LeavingController {
 		School3_StudentEntity student = repository.findByRegisterNumber(registerNumber);
 		try {
 			XWPFDocument doc = new XWPFDocument(OPCPackage
-					.open(ResourceUtils.getFile(env.getProperty("school1.leaving_certificate.doc.filePath"))));
+					.open(ResourceUtils.getFile(env.getProperty("school3.leaving_certificate.doc.filePath"))));
 			
 			/*
 			 * For Table

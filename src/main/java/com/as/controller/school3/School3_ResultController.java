@@ -74,7 +74,7 @@ public class School3_ResultController {
 
 				try {
 					XWPFDocument doc = new XWPFDocument(OPCPackage
-							.open(ResourceUtils.getFile(env.getProperty("school1.result.11_12.doc.filePath"))));
+							.open(ResourceUtils.getFile(env.getProperty("school3.result.11_12.doc.filePath"))));
 					/*
 					 * For Table
 					 */
@@ -437,7 +437,7 @@ public class School3_ResultController {
 
 				try {
 					XWPFDocument doc = new XWPFDocument(OPCPackage
-							.open(ResourceUtils.getFile(env.getProperty("school1.result.8_9_10.doc.filePath"))));
+							.open(ResourceUtils.getFile(env.getProperty("school3.result.8_9_10.doc.filePath"))));
 					/*
 					 * For Table
 					 */

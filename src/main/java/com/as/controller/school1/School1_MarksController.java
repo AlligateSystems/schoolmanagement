@@ -25,13 +25,6 @@ public class School1_MarksController {
 		return modelAndView;
 	}
 
-	@GetMapping("school1/marks_b")
-	public ModelAndView marksB() {
-		ModelAndView modelAndView = new ModelAndView("school1/marksB");
-		modelAndView.addObject("pageTitle", "Add Marks");
-		return modelAndView;
-	}
-
 	@GetMapping("school1/marks_view")
 	public ModelAndView marks_view() {
 		ModelAndView modelAndView = new ModelAndView("school1/marks_view");
@@ -44,10 +37,6 @@ public class School1_MarksController {
 		return marksService.addMarksA(form);
 	}
 
-	@PostMapping("school1/marks/marks_b")
-	public @ResponseBody BaseResponse addMarksB(School1_MarksForm form) {
-		return marksService.addMarksB(form);
-	}
 
 	@PostMapping("school1/marks/getAll")
 	public @ResponseBody BaseResponse getAll() {

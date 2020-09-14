@@ -51,7 +51,7 @@ public class School3_BonafideController {
 		School3_StudentEntity student = repository.findByRegisterNumber(registerNumber);
 		try {
 			XWPFDocument doc = new XWPFDocument(OPCPackage
-					.open(ResourceUtils.getFile(env.getProperty("school1.bonafide_certificate.doc.filePath"))));
+					.open(ResourceUtils.getFile(env.getProperty("school3.bonafide_certificate.doc.filePath"))));
 			LocalDate dt = LocalDate.now();
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-yy");
 			for (XWPFParagraph p : doc.getParagraphs()) {
