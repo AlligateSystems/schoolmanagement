@@ -23,43 +23,114 @@
                 <div class="container-fluid">
 
                     <!-- Form Fields -->
-                    <div class="card card-primary">
-                        <div class="card-header">Get Bonafide Certificate</div>
-                        <div class="card-body">
-                            <form class="" id="CustomeForm" method="post">
+                    <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog  modal-dialog-centered" role="document">
+					    <div class="modal-content card-primary  card-outline">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLabel">વિદ્યાર્થી માહિતી</h5>
+					      </div>
+					      <div class="modal-body">
+					      <form class="" id="StudentForm" method="post">
                                 <div class="row">
                                 	<div class="col-md-12">
 										<div class="form-group d-none">
 											<label>ID</label> <input class="form-control" id="id" name="id">
 										</div>
 									</div>
-									
-                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>Register Number *</label>
-                                        <input type="text" id="registerNumber" name="registerNumber" placeholder="Register Number" class="form-control">
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>પ્રથમ નામ *</label>
+                                        <input type="text" id="firstName" readonly name="firstName" class="form-control" placeholder="First Name">
                                     </div>
-                                    
-                                   <!--  <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>Roll Number *</label>
-                                        <input type="text" id="rollNumber" name="rollNumber" placeholder="Roll Number" class="form-control">
-                                    </div> -->
-                                    
-                             
-                                    
-                                    
-                                    <div class="col-12 form-group mg-t-8">
-                                        <button id="btnSubmit" type="button" class="btn btn-primary">Submit</button>
-                                        <!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
-                                        <button id="btnReset" type="reset" class="btn btn-danger">Reset</button>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>વચલું નામ *</label>
+                                        <input type="text" id="middleName" readonly name="middleName" placeholder="Middle Name" class="form-control">
                                     </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>અટક *</label>
+                                        <input type="text" id="lastName" readonly name="lastName" placeholder="Last Name" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>લિંગ *</label>
+                                        <input type="text" id="gender" readonly name="gender" placeholder="Gender" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>જન્મ સ્થળ *</label>
+                                        <input type="text" id="birthPlace" readonly name="birthPlace" placeholder="Birthplace" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>જન્મ તારીખ *</label>
+                                        <input type="date" id="dateOfBirth" readonly name="dateOfBirth" placeholder="dd/mm/yyyy" class="form-control">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>પિતાનું નામ *</label>
+                                        <input type="text" id="fatherName" readonly name="fatherName" placeholder="Father's Name" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>માતાનું નામ *</label>
+                                        <input type="text" id="motherName" readonly name="motherName" placeholder="Mother's Name" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>પિતાનું વ્યવસાય *</label>
+                                        <input type="text" id="occupation" readonly name="occupation" placeholder="Parents Occupation" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>જાતિ, પેટા જાતિ  *</label>
+                                        <input type="text" id="caste" readonly name="caste" placeholder="Cast, Sub-cast" class="form-control">
+                                        
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>સરનામું *</label>
+                                        <input type="text" id="address" readonly name="address" placeholder="Address" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>સંપર્ક નંબર *</label>
+                                        <input type="text" id="contactNumber" readonly name="contactNumber" placeholder="Contact Number" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>ઇમેઇલ *</label>
+                                        <input type="email" id="email" readonly name="email" placeholder="Email" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>રજિસ્ટર નંબર *</label>
+                                        <input type="text" id="registerNumber" readonly name="registerNumber" placeholder="Register Number" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+	                                    <label>ધોરણ *</label>
+	                                    <input type="text" id="classIn" readonly name="classIn" placeholder="Class" class="form-control">
+                                	</div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                        <label>રોલ નંબર *</label>
+                                        <input type="text" id="rollNumber" readonly name="rollNumber" placeholder="Roll Number" class="form-control">
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
+                                    <label>રક્ત જૂથ *</label>
+                                    <input type="text" id="bloodGroup" name="bloodGroup" readonly placeholder="blood Group" class="form-control">
+                                </div>
+                                 
                                 </div>
                             </form>
-                        </div>
-                    </div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
 					<!-- Form Fields -->
 
-
-
+                    <!-- Data Table -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h4 class="float-left">બોનાફાઇડ પ્રમાણપત્ર મેળવો</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="customTable" class="table display data-table text-nowrap">
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+					 <!-- Data Table -->
 
                 </div>
             </section>
@@ -72,16 +143,68 @@
     
     <script>
     $(document).ready(function() {
-
-        $('#btnSubmit').on('click', function() {
-        	
-        	window.location.href = '/bonafide/bonafide/'+$("#registerNumber").val();
-             
-        }); 
+    	$.ajax({
+			type : 'POST',
+			url : '/school1/student/getAll',
+			dataType : 'json',
+		}).done(function(data) {
+			var mainData  = data.body;
+			 table=$("#customTable").DataTable( {
+						data : mainData,
+						columns : [ 
+							{ title : "રજિસ્ટર નંબર" ,  "data": "registerNumber"  },
+							{ title : "રોલ નંબર" ,  "data": "rollNumber"  },
+							{ title : "નામ" ,  "data": "fullName"  },
+							{ title : "વર્ગ" ,  "data": "classIn"  },
+							{ title : "સરનામું" ,  "data": "address"  },
+							{ title : "સંપર્ક નંબર",  "data": "contactNumber" },
+							{
+								title : "Action",
+				                "orderable":      false,
+				                "defaultContent": '<span class="float-right"><button id="edit" type="button" class="btn btn-warning"><i class="fa fa-eye"></i></button> <button id="print" type="button" class="btn btn-success"><i class="fa fa-print"></i></button> </span>'
+				            },
+							],
+					});
+		}); 
+    	
+    	//edit
+    	$('#customTable tbody').on('click', '#edit', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row( tr );
+            $('#id').val(row.data().id);
+            $('#firstName').val(row.data().firstName);
+            $('#middleName').val(row.data().middleName);
+            $('#lastName').val(row.data().lastName);
+            $('#gender').val(row.data().gender);
+            $('#birthPlace').val(row.data().birthPlace);
+            $('#dateOfBirth').val(row.data().dateOfBirth);
+            $('#fatherName').val(row.data().fatherName);
+            $('#motherName').val(row.data().motherName);
+            $('#occupation').val(row.data().occupation);
+            $('#caste').val(row.data().caste);
+            $('#address').val(row.data().address);
+            $('#contactNumber').val(row.data().contactNumber);
+            $('#email').val(row.data().email);
+            $('#registerNumber').val(row.data().registerNumber);
+            $('#classIn').val(row.data().classIn);
+            $('#rollNumber').val(row.data().rollNumber);
+            $('#bloodGroup').val(row.data().bloodGroup);
+            $("#btnSubmit").html('Update');
+            window.scrollTo(0, 0); 
+            $('#FormModal').modal('show');
+        });
+    	
+    	
+    	//edit
+    	$('#customTable tbody').on('click', '#print', function () {
+    		 var tr = $(this).closest('tr');
+             var row = table.row( tr );
+    		window.location.href = '/school1/bonafide/'+row.data().registerNumber;
+        });
         
     });
     </script>
     
-<div th:replace="template :: footer"></div>    
+ <div th:replace="template :: footer"></div>     
 </body>
 </html>
