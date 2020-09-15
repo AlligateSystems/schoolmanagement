@@ -67,7 +67,7 @@ public class School3_ResultController {
 
 		School3_StudentEntity student = studentRepository.findByRegisterNumber(registerNumber);
 		if (student != null) {
-			if (student.getClassIn().equals("11") || student.getClassIn().equals("12")) {
+//			if (student.getClassIn().equals("11") || student.getClassIn().equals("12")) {
 
 				List<School3_MarksEntity> marksList = marksRepository.findByRegisterNumber(registerNumber);
 				List<School3_AttendenceEntity> attendaceList = attendanceRepository.findByRegisterNumber(registerNumber);
@@ -415,9 +415,9 @@ public class School3_ResultController {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else {
-				response.sendRedirect("/exception");
-			}
+//			} else {
+//				response.sendRedirect("/exception");
+//			}
 		} else {
 			response.sendRedirect("/exception");
 		}
@@ -430,8 +430,8 @@ public class School3_ResultController {
 
 		School3_StudentEntity student = studentRepository.findByRegisterNumber(registerNumber);
 		if (student != null) {
-			if (student.getClassIn().equals("8") || student.getClassIn().equals("9")
-					|| student.getClassIn().equals("10")) {
+//			if (student.getClassIn().equals("8") || student.getClassIn().equals("9")
+//					|| student.getClassIn().equals("10")) {
 				List<School3_MarksEntity> marksList = marksRepository.findByRegisterNumber(registerNumber);
 				List<School3_AttendenceEntity> attendaceList = attendanceRepository.findByRegisterNumber(registerNumber);
 
@@ -834,9 +834,9 @@ public class School3_ResultController {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else {
-				response.sendRedirect("/exception");
-			}
+//			} else {
+//				response.sendRedirect("/exception");
+//			}
 		} else {
 			response.sendRedirect("/exception");
 		}
