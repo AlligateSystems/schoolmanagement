@@ -26,7 +26,7 @@ Work Below >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 							<a href="/school1/student_add" class="card text-white bg-primary " >
 							  <div class="card-header"><i class="fa fa-graduation-cap fa-3x"></i><b> શ્રી પ્ર. સ. કોઠારી બેહરા - મૂંગા વિવિધલક્ષી વિદ્યાલય </b></div>
 							  <div class="card-body">
-							    <h5 class="card-title">કુલ વિદ્યાર્થી</h5>
+							    <h5 class="card-title">કુલ વિદ્યાર્થી : <i th:text="${school1}"></i></h5>
 							    <p class="card-text" id="school1students"></p>
 							  </div>
 							</a>
@@ -36,7 +36,7 @@ Work Below >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 							<a href="/school2/student_add" class="card text-white bg-warning " >
 							  <div class="card-header"><i class="fa fa-graduation-cap fa-3x"></i><b>મંદબુદ્ધિના બાળકોની વિવિધલક્ષી વિદ્યાલય</b></div>
 							  <div class="card-body">
-							    <h5 class="card-title">કુલ વિદ્યાર્થી</h5>
+							    <h5 class="card-title">કુલ વિદ્યાર્થી : <i th:text="${school2}"></i></h5>
 							    <p class="card-text" id="school2students"></p>
 							  </div>
 							</a>
@@ -46,13 +46,35 @@ Work Below >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 							<a href="/school3/student_add" class="card text-white bg-danger " >
 							  <div class="card-header"><i class="fa fa-graduation-cap fa-3x"></i><b> શ્રી મ. સ. કોઠારી મૂક- બધિર માધ્યમિક અને ઉચ્ચતર માધ્યમિક શાળા</b></div>
 							  <div class="card-body">
-							    <h5 class="card-title">કુલ વિદ્યાર્થી</h5>
+							    <h5 class="card-title">કુલ વિદ્યાર્થી : <i th:text="${school3}"></i></h5>
 							    <p class="card-text" id="school3students"></p>
 							  </div>
 							</a>
 						</div>
 						
 						
+						<div class="col-md- col-sm-12 col-12">
+						    <div class="card bg-light-gradient collapsed-card">
+						        <div class="card-header no-border">
+						
+						            <h3 class="card-title">
+						                  <i class="fa fa-calendar"></i>
+						                  Calendar
+						                </h3>
+						            <div class="card-tools">
+						                <button type="button" class="btn btn-success btn-sm" data-widget="collapse">
+						                    <i class="fa fa-minus"></i>
+						                </button>
+						                <button type="button" class="btn btn-success btn-sm" data-widget="remove">
+						                    <i class="fa fa-times"></i>
+						                </button>
+						            </div>
+						        </div>
+						        <div class="card-body p-0">
+						            <div id="calendar" style="width: 100%"></div>
+						        </div>
+						    </div>
+						</div>
 
 						
 						
@@ -79,6 +101,12 @@ Work Above ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 	</div>
 	<div th:replace="template :: footer"></div>
 	<div th:replace="template :: jsscript"></div>
+	<!-- daterangepicker -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script> -->
+
+<script type="text/javascript">
+// The Calender
+$('#calendar').datepicker()</script>
 </body>
 </html>
 
