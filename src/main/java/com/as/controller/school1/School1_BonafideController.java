@@ -18,11 +18,11 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,7 +34,7 @@ import com.as.repository.school1.School1_StudentRepository;
 public class School1_BonafideController {
 
 	@Autowired
-	Environment env;
+	private ResourceLoader resourceLoader;
 
 	@Autowired
 	School1_StudentRepository repository;
@@ -50,8 +50,8 @@ public class School1_BonafideController {
 	public void dashboard(@PathVariable(value = "registerNumber") String registerNumber, HttpServletResponse response) {
 		School1_StudentEntity student = repository.findByRegisterNumber(registerNumber);
 		try {
-			XWPFDocument doc = new XWPFDocument(OPCPackage
-					.open(ResourceUtils.getFile(env.getProperty("school1.bonafide_certificate.doc.filePath"))));
+			Resource resource = resourceLoader.getResource("classpath:documents/school1/School1_Bonafide_Document.docx");
+			XWPFDocument doc = new XWPFDocument(OPCPackage.open(resource.getFile()));
 			LocalDate dt = LocalDate.now();
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-yy");
 			for (XWPFParagraph p : doc.getParagraphs()) {
@@ -93,7 +93,7 @@ public class School1_BonafideController {
 				}
 			}
 //			doc.write(new FileOutputStream(new File("c://createdocument.docx")));
-			File file = new File("BonafideSc2Temp.docx");
+			File file = new File("BonafideSc1Temp.docx");
 			doc.write(new FileOutputStream(file));
 			if (file.exists()) {
 				String mimeType = URLConnection.guessContentTypeFromName(file.getName());

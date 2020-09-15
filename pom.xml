@@ -13,6 +13,7 @@
 	<artifactId>ESchool</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ESchool</name>
+	<packaging>jar</packaging>
 	<description>project for school results management</description>
 
 	<properties>
