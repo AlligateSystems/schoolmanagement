@@ -50,7 +50,8 @@ public class School1_BonafideController {
 	public void dashboard(@PathVariable(value = "registerNumber") String registerNumber, HttpServletResponse response) {
 		School1_StudentEntity student = repository.findByRegisterNumber(registerNumber);
 		try {
-			Resource resource = resourceLoader.getResource("classpath:documents/school1/School1_Bonafide_Document.docx");
+			Resource resource = resourceLoader
+					.getResource("classpath:documents/school1/School1_Bonafide_Document.docx");
 			XWPFDocument doc = new XWPFDocument(OPCPackage.open(resource.getFile()));
 			LocalDate dt = LocalDate.now();
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-yy");
@@ -85,8 +86,8 @@ public class School1_BonafideController {
 						text = text.replace("$cast$", student.getCaste());
 						r.setText(text, 0);
 					}
-					if (text != null && text.contains("$reg$")) {
-						text = text.replace("$reg$", student.getRegisterNumber());
+					if (text != null && text.contains("$registerNumber$")) {
+						text = text.replace("$registerNumber$", student.getRegisterNumber());
 						r.setText(text, 0);
 					}
 					r.setText(text, 0);
