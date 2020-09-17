@@ -30,5 +30,4 @@ public class School1_LeavingController {
 			FileCopyUtils.copy(inputStream, response.getOutputStream());
 		}
 	}
-
 }

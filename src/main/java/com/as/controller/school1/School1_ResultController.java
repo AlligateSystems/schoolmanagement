@@ -14,7 +14,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -23,8 +22,8 @@ import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import org.dom4j.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -40,7 +39,7 @@ import com.as.repository.school1.School1_StudentRepository;
 public class School1_ResultController {
 
 	@Autowired
-	private ResourceLoader resourceLoader;
+	Environment env;
 
 	@Autowired
 	School1_StudentRepository studentRepository;
@@ -59,9 +58,9 @@ public class School1_ResultController {
 			List<School1_MarksEntity> marksList = marksRepository.findByRegisterNumber(registerNumber);
 
 			try {
-				Resource resource = resourceLoader
-						.getResource("classpath:documents/school1/School1_Result_Document.docx");
-				XWPFDocument doc = new XWPFDocument(OPCPackage.open(resource.getFile()));
+				ClassPathResource cpr = new ClassPathResource(env.getProperty("school1.result.doc.filePath"));
+				
+				XWPFDocument doc = new XWPFDocument(cpr.getInputStream());
 				/*
 				 * For Table
 				 */

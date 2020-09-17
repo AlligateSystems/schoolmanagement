@@ -13,13 +13,12 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -34,7 +33,7 @@ import com.as.repository.school2.School2_StudentRepository;
 public class School2_BonafideController {
 
 	@Autowired
-	private ResourceLoader resourceLoader;
+	Environment env;
 
 	@Autowired
 	School2_StudentRepository repository;
@@ -50,9 +49,8 @@ public class School2_BonafideController {
 	public void dashboard(@PathVariable(value = "registerNumber") String registerNumber, HttpServletResponse response) {
 		School2_StudentEntity student = repository.findByRegisterNumber(registerNumber);
 		try {
-			Resource resource = resourceLoader
-					.getResource("classpath:documents/school2/School2_Bonafide_Document.docx");
-			XWPFDocument doc = new XWPFDocument(OPCPackage.open(resource.getFile()));
+			ClassPathResource cpr = new ClassPathResource(env.getProperty("school2.bonafide_certificate.doc.filePath"));
+			XWPFDocument doc = new XWPFDocument(cpr.getInputStream());
 			LocalDate dt = LocalDate.now();
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-yy");
 			for (XWPFParagraph p : doc.getParagraphs()) {

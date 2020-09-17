@@ -14,7 +14,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -23,8 +22,8 @@ import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import org.dom4j.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -42,7 +41,7 @@ import com.as.repository.school3.School3_StudentRepository;
 public class School3_ResultController {
 
 	@Autowired
-	private ResourceLoader resourceLoader;
+	Environment env;
 
 	@Autowired
 	School3_StudentRepository studentRepository;
@@ -73,9 +72,8 @@ public class School3_ResultController {
 			List<School3_AttendenceEntity> attendaceList = attendanceRepository.findByRegisterNumber(registerNumber);
 
 			try {
-				Resource resource = resourceLoader
-						.getResource("classpath:documents/school3/School3_Result_Document(11-12).docx");
-				XWPFDocument doc = new XWPFDocument(OPCPackage.open(resource.getFile()));
+				ClassPathResource cpr = new ClassPathResource(env.getProperty("school3.result.11_12.doc.filePath"));
+				XWPFDocument doc = new XWPFDocument(cpr.getInputStream());
 				/*
 				 * For Table
 				 */
@@ -438,9 +436,8 @@ public class School3_ResultController {
 
 			try {
 
-				Resource resource = resourceLoader
-						.getResource("classpath:documents/school3/School3_Result_Document(8-9-10).docx");
-				XWPFDocument doc = new XWPFDocument(OPCPackage.open(resource.getFile()));
+				ClassPathResource cpr = new ClassPathResource(env.getProperty("school3.result.8_9_10.doc.filePath"));
+				XWPFDocument doc = new XWPFDocument(cpr.getInputStream());
 				/*
 				 * For Table
 				 */
