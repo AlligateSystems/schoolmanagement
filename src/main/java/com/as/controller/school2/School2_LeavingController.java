@@ -95,7 +95,7 @@ public class School2_LeavingController {
 			var.addTextVariable(new TextVariable("#{reg}", student.getRegisterNumber()));
 			docx.fillTemplate(var);
 
-			File file = new File("leavingSc2Temp.docx");
+			File file = new File("Temp_SC2_Leaving.docx");
 			docx.save(new FileOutputStream(file));
 			if (file.exists()) {
 				String mimeType = URLConnection.guessContentTypeFromName(file.getName());

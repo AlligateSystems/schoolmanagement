@@ -75,7 +75,7 @@ public class School3_BonafideController {
 			var.addTextVariable(new TextVariable("#{reg}", student.getRegisterNumber()));
 			docx.fillTemplate(var);
 
-			File file = new File("BonafideSc3Temp.docx");
+			File file = new File("Temp_SC3_Bonafide.docx");
 			docx.save(new FileOutputStream(file));
 			if (file.exists()) {
 				String mimeType = URLConnection.guessContentTypeFromName(file.getName());

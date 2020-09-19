@@ -29,7 +29,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.as.Common;
 import com.as.entity.school1.School1_StudentEntity;
 import com.as.repository.school1.School1_StudentRepository;
 
@@ -101,7 +100,7 @@ public class School1_LeavingController {
 			
 			docx.fillTemplate(var);
 
-			File file = new File("leavingSc1Temp.docx");
+			File file = new File("Temp_SC1_Leaving.docx");
 			docx.save(new FileOutputStream(file));
 			if (file.exists()) {
 				String mimeType = URLConnection.guessContentTypeFromName(file.getName());

@@ -319,7 +319,7 @@ public class School2_ResultController {
 				}
 
 				docx.fillTemplate(var);
-				File file = new File("ResultTempsc2.docx");
+				File file = new File("Temp_SC2_Result.docx");
 				docx.save(new FileOutputStream(file));
 				if (file.exists()) {
 					String mimeType = URLConnection.guessContentTypeFromName(file.getName());

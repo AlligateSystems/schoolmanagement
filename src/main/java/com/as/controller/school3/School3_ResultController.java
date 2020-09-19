@@ -545,7 +545,7 @@ public class School3_ResultController {
 			}
 
 			docx.fillTemplate(var);
-			File file = new File("ResultTempsc31.docx");
+			File file = new File("Temp_SC3_Result_1.docx");
 			docx.save(new FileOutputStream(file));
 			if (file.exists()) {
 				String mimeType = URLConnection.guessContentTypeFromName(file.getName());
@@ -1123,7 +1123,7 @@ public class School3_ResultController {
 				}
 			}
 			docx.fillTemplate(var);
-			File file = new File("ResultTempsc32.docx");
+			File file = new File("Temp_SC3_Result_2.docx");
 			docx.save(new FileOutputStream(file));
 			if (file.exists()) {
 				String mimeType = URLConnection.guessContentTypeFromName(file.getName());
