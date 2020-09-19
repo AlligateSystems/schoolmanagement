@@ -13,7 +13,7 @@
 <body>
     <div class="wrapper">
         <div th:replace="template :: navbar"></div>
-        <div th:replace="template :: sidebar_school1"></div>
+        <div th:replace="template :: sidebar_school2"></div>
 
         <!-- ------------------Work Below------------------ -->
         <div class="content-wrapper">
@@ -120,7 +120,7 @@
                     <!-- Data Table -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4 class="float-left">બોનાફાઇડ પ્રમાણપત્ર મેળવો</h4>
+                            <h4 class="float-left">છોડીને પ્રમાણપત્ર મેળવો</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -151,7 +151,7 @@
     	
     	$.ajax({
 			type : 'POST',
-			url : '/school1/student/getAll',
+			url : '/school2/student/getAll',
 			dataType : 'json',
 		}).done(function(data) {
 			var mainData  = data.body;
@@ -205,7 +205,7 @@
     	$('#customTable tbody').on('click', '#print', function () {
     		 var tr = $(this).closest('tr');
              var row = table.row( tr );
-    		window.location.href = '/school1/bonafide/'+row.data().registerNumber;
+    		window.location.href = '/school2/leaving/'+row.data().registerNumber;
         });
         
     });

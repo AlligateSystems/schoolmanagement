@@ -120,7 +120,7 @@
                     <!-- Data Table -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4 class="float-left">બોનાફાઇડ પ્રમાણપત્ર મેળવો</h4>
+                            <h4 class="float-left">છોડીને પ્રમાણપત્ર મેળવો</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -205,7 +205,7 @@
     	$('#customTable tbody').on('click', '#print', function () {
     		 var tr = $(this).closest('tr');
              var row = table.row( tr );
-    		window.location.href = '/school1/bonafide/'+row.data().registerNumber;
+    		window.location.href = '/school1/leaving/'+row.data().registerNumber;
         });
         
     });
