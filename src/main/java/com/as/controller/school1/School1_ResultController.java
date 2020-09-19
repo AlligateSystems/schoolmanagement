@@ -330,8 +330,8 @@ public class School1_ResultController {
 			HttpServletResponse response, HttpServletRequest request)
 			throws IOException, DocumentException, ParseException {
 
-		School1_StudentEntity student = studentRepository.findByRegisterNumber(registerNumber);
-		List<School1_MarksEntity> marksList = marksRepository.findByRegisterNumber(registerNumber);
+		School1_StudentEntity student = studentRepository.findByRegisterNumber(registerNumber.trim());
+		List<School1_MarksEntity> marksList = marksRepository.findByRegisterNumber(registerNumber.trim());
 
 		try {
 			ClassPathResource cpr = new ClassPathResource(env.getProperty("school1.result.doc.filePath"));

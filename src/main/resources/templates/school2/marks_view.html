@@ -80,6 +80,10 @@
    <script>
     $(document).ready(function() {
     	
+    	$('input[type="text"]').change(function(){
+     	   this.value = $.trim(this.value);
+     	});
+    	
     	$('#btnSubmitA').on('click', function() {
 			window.location.href = '/school2/result/'+ $("#registerNumberA").val();
 		});

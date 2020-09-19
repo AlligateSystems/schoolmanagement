@@ -36,9 +36,9 @@
 									</div>
 
 									<div class="col-xl-6 col-lg-6 col-12 form-group">
-										<label>રજિસ્ટર નંબર *</label> <input type="text"
+										<label>રજિસ્ટર નંબર  <span class="text-danger">*</span></label> <input type="text"
 											id="registerNumberA" name="registerNumberA"
-											placeholder="Register Number" class="form-control">
+											placeholder="રજિસ્ટર નંબર" class="form-control">
 									</div>
 
 									<div class="col-12 form-group mg-t-8">
@@ -79,6 +79,10 @@
     
    <script>
     $(document).ready(function() {
+    	
+    	$('input[type="text"]').change(function(){
+    	   this.value = $.trim(this.value);
+    	});
     	
     	$('#btnSubmitA').on('click', function() {
 			window.location.href = '/school1/result/'+ $("#registerNumberA").val();
