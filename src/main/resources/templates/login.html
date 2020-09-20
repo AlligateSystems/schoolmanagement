@@ -90,47 +90,55 @@
 
 
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" th:href="@{/plugins/font-awesome/css/font-awesome.min.css}"/>
-  <link rel="stylesheet" type="text/css" th:href="@{/dist/css/adminlte.min.css}"/>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/plugins/font-awesome/css/font-awesome.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/dist/css/adminlte.min.css}" />
 </head>
 <body class="hold-transition">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="/"><b>Welcome To Manav Kalyaan Trust</b></a>
-    <p>School Management System</p>
-  </div>
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg"> <img class="login-box-title" src="css/loginlogocolor.jpeg"></p>
-      <form id="LoginForm" method="post">
-        <div class="form-group has-feedback">
-        <label>Username</label> 
-          <input type="text" name="username" class="form-control" value="test" placeholder="User Name">
-        </div>
-        <div class="form-group has-feedback">
-        <label>Password</label>
-          <input type="password" name="password" class="form-control" value="pass" placeholder="Password">
-        </div>
-        <div class="row">
-            <button type="submit" id="btnSubmit" class="btn btn-success btn-block btn-flat">Sign In</button>
-        </div>
-      </form>
-      <p class="mb-1 float-right">
-         <a href="/register" class="text-warning">Register a new membership</a>
-      </p>
-    </div>
-  </div>
-</div>
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="/"><b>Welcome To Manav Kalyaan Trust</b></a>
+			<p>School Management System</p>
+		</div>
+		<div class="card">
+			<div class="card-body login-card-body">
+				<p class="login-box-msg">
+					<img class="login-box-title" src="css/loginlogocolor.jpeg">
+				</p>
+				<form id="LoginForm" method="post">
+					<div class="form-group has-feedback">
+						<label>Username</label> <input type="text" name="username"
+							class="form-control" value="test" placeholder="User Name">
+					</div>
+					<div class="form-group has-feedback">
+						<label>Password</label> <input type="password" name="password"
+							class="form-control" value="pass" placeholder="Password">
+					</div>
+					<div class="row">
+						<button type="submit" id="btnSubmit"
+							class="btn btn-success btn-block btn-flat">Sign In</button>
+					</div>
+				</form>
+				<p class="mb-1 float-right">
+					<a href="/register" class="text-warning">Register a new
+						membership</a>
+				</p>
+			</div>
+		</div>
+	</div>
 
 
-<script type="text/javascript" th:src="@{/plugins/jquery/jquery.min.js}"></script>
-<script type="text/javascript" th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/plugins/jquery/jquery.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

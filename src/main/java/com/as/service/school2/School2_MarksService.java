@@ -9,14 +9,19 @@ import org.springframework.stereotype.Service;
 import com.as.config.BaseResponse;
 import com.as.config.ResponseType;
 import com.as.entity.school2.School2_MarksEntity;
+import com.as.entity.school2.School2_StudentEntity;
 import com.as.form.school2.School2_MarksForm;
 import com.as.repository.school2.School2_MarksRepository;
+import com.as.repository.school2.School2_StudentRepository;
 
 @Service
 public class School2_MarksService {
 
 	@Autowired
 	School2_MarksRepository marksRepository;
+	
+	@Autowired
+	School2_StudentRepository studentRepository;
 
 	public BaseResponse addMarksA(School2_MarksForm form) {
 		BaseResponse response = new BaseResponse();
@@ -115,15 +120,17 @@ public class School2_MarksService {
 		BaseResponse response = new BaseResponse();
 		List<School2_MarksEntity> list = marksRepository.findAll();
 		List<School2_MarksEntity> array = new ArrayList<>();
+		List<School2_StudentEntity> array2 = new ArrayList<>();
 		for (School2_MarksEntity School2_MarksEntity : list) {
 			if (!checkA(array, School2_MarksEntity)) {
 				array.add(School2_MarksEntity);
+				array2.add(studentRepository.findByRegisterNumber(School2_MarksEntity.getRegisterNumber()));
 			}
 		}
 		response.setStatus(200);
 		response.setType(ResponseType.SUCCESS);
 		response.setMessage("Student Marks");
-		response.setBody(array);
+		response.setBody(array2);
 		return response;
 	}
 

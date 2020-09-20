@@ -1,176 +1,184 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 
 
 <head th:fragment="headFragment (pageTitle)">
-		<title>[[${pageTitle}]]</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" th:href="@{../plugins/font-awesome/css/font-awesome.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{../dist/css/adminlte.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{../plugins/SweetAlert2/sweetalert2.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{../plugins/datatables/jquery.dataTables.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{../plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{../plugins/datatables/extensions/Responsive/css/dataTables.responsive.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{../plugins/select2/select2.min.css}"/>
+<title>[[${pageTitle}]]</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	th:href="@{../plugins/font-awesome/css/font-awesome.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{../dist/css/adminlte.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{../plugins/SweetAlert2/sweetalert2.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{../plugins/datatables/jquery.dataTables.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{../plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{../plugins/datatables/extensions/Responsive/css/dataTables.responsive.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{../plugins/select2/select2.min.css}" />
 </head>
 
 <th:block th:fragment="navbar">
-	<nav class="main-header navbar navbar-expand " style="background-color:#48494B!important; ">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#"><i style="color: orange!important;" class="fa fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="/" class="nav-link" style="color: orange!important;">Home</a>
-                </li>
-            </ul>
+	<nav class="main-header navbar navbar-expand "
+		style="background-color: #48494B !important;">
+		<!-- Left navbar links -->
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
+				href="#"><i style="color: orange !important;" class="fa fa-bars"></i></a>
+			</li>
+			<li class="nav-item d-none d-sm-inline-block"><a href="/"
+				class="nav-link" style="color: orange !important;">Home</a></li>
+		</ul>
 
-            
-            
-             <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="text-light" data-slide="true" href="/logout"><i class="fa fa-sign-out" style="color: orange;"></i>Signout</a>
-                </li>
-            </ul>
-        </nav>
-	</th:block>
+
+
+		<!-- Right navbar links -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item"><a class="text-light" data-slide="true"
+				href="/logout"><i class="fa fa-sign-out" style="color: orange;"></i>Signout</a>
+			</li>
+		</ul>
+	</nav>
+</th:block>
 
 
 
 <th:block th:fragment="sidebar">
-	<aside class="main-sidebar sidebar-dark-secondary elevation-4" style="background-color:#48494B!important;">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3  d-flex" >
-        <div class="image">
-          <img  style="width: 11.1rem!important;" src="dist/img/school/sc1.png" class="img-squre elevation-2" alt="User Image">
-        </div>
-      </div>
-	    <!-- Brand Logo -->
-	    <a href="#" class="brand-link">
-	        <span class="brand-text"><span class="font-weight-bold">School Management<br> System</span></span>
-	    </a>
-	    <div class="sidebar">
-	        <nav class="mt-2">
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview menu-open">
-	                    <a href="/" class="nav-link active">
-	                        <i class="nav-icon fa fa-dashboard"></i>
-	                        <span>Dashboard</span>
-	                    </a>
-	                </li>
-	            </ul>
-	        </nav>
-	    </div>
+	<aside class="main-sidebar sidebar-dark-secondary elevation-4"
+		style="background-color: #48494B !important;">
+		<!-- Sidebar user panel (optional) -->
+		<div class="user-panel mt-3 pb-3  d-flex">
+			<div class="image">
+				<img style="width: 11.1rem !important;"
+					src="dist/img/school/sc1.png" class="img-squre elevation-2"
+					alt="User Image">
+			</div>
+		</div>
+		<!-- Brand Logo -->
+		<a href="#" class="brand-link"> <span class="brand-text"><span
+				class="font-weight-bold">School Management<br> System
+			</span></span>
+		</a>
+		<div class="sidebar">
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview menu-open"><a href="/"
+						class="nav-link active"> <i class="nav-icon fa fa-dashboard"></i>
+							<span>Dashboard</span>
+					</a></li>
+				</ul>
+			</nav>
+		</div>
 	</aside>
 </th:block>
 
 
 
 <th:block th:fragment="sidebar_school1">
-	<aside class="main-sidebar sidebar-dark-secondary elevation-4" style="background-color:#48494B!important;">
-	<!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3  d-flex" >
-        <div class="image">
-          <img  style="width: 11.1rem!important;" src="/dist/img/school/sc1.png" class="img-squre elevation-2" alt="User Image">
-        </div>
-      </div>
-	    <!-- Brand Logo -->
-	    <a href="#" class="brand-link">
-	        <span class="brand-text"><span class="font-weight-bold">શ્રી પ્ર. સ. કોઠારી બેહરા -<br> મૂંગા વિવિધલક્ષી વિદ્યાલય</span></span>
-	    </a>
-	    <div class="sidebar">
-	        <nav class="mt-2">
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview menu-open">
-	                    <a href="/" class="nav-link active">
-	                        <i class="nav-icon fa fa-dashboard" style="color: orange;"></i>
-	                        <span>ડેશબોર્ડ</span>
-	                    </a>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa-user" style="color: orange;"></i>
-	                        <p>વિદ્યાર્થી નોંધણી<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-<!-- 	                        <li class="nav-item"> -->
-<!-- 	                            <a href="school" class="nav-link"> -->
-<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
-<!-- 	                                <span>Add School</span> -->
-<!-- 	                            </a> -->
-<!-- 	                        </li> -->
-	
-	                        <li class="nav-item">
-	                            <a href="/school1/student_add" class="nav-link">
-	                                <i class="fa fa-plus nav-icon" style="color: orange;"></i>
-	                                <span>ઉમેરો</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school1/student_view" class="nav-link">
-	                                <i class="fa fa-eye nav-icon" style="color: orange;"></i>
-	                                <span>જુઓ</span>
-	                            </a>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa-wpforms" style="color: orange;"></i>
-	                        <p>પરિણામ<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-	                        <li class="nav-item">
-	                            <a href="/school1/marks_a" class="nav-link">
-	                                <i class="fa fa-plus nav-icon" style="color: orange;"></i>
-	                                <span>ગુણ ઉમેરો</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school1/marks_view" class="nav-link">
-	                                <i class="fa fa-eye nav-icon" style="color: orange;"></i>
-	                                <span>જુઓ / છાપો</span>
-	                            </a>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa-file" style="color: orange;"></i>
-	                        <p>દસ્તાવેજો<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-	                        <li class="nav-item">
-	                            <a href="/school1/bonafide" class="nav-link">
-	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
-	                                <span>બોનાફાઇડ પ્રમાણપત્ર</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school1/leaving" class="nav-link">
-	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
-	                                <span>પ્રમાણપત્ર છોડવું</span>
-	                            </a>
-	                        </li>
-	                        <!-- <li class="nav-item">
+	<aside class="main-sidebar sidebar-dark-secondary elevation-4"
+		style="background-color: #48494B !important;">
+		<!-- Sidebar user panel (optional) -->
+		<div class="user-panel mt-3 pb-3  d-flex">
+			<div class="image">
+				<img style="width: 11.1rem !important;"
+					src="/dist/img/school/sc1.png" class="img-squre elevation-2"
+					alt="User Image">
+			</div>
+		</div>
+		<!-- Brand Logo -->
+		<a href="#" class="brand-link"> <span class="brand-text"><span
+				class="font-weight-bold">શ્રી પ્ર. સ. કોઠારી બેહરા -<br>
+					મૂંગા વિવિધલક્ષી વિદ્યાલય
+			</span></span>
+		</a>
+		<div class="sidebar">
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview menu-open"><a href="/"
+						class="nav-link active"> <i class="nav-icon fa fa-dashboard"
+							style="color: orange;"></i> <span>ડેશબોર્ડ</span>
+					</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa-user" style="color: orange;"></i>
+							<p>
+								વિદ્યાર્થી નોંધણી<i class="right fa fa-angle-left"
+									style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<!-- 	                        <li class="nav-item"> -->
+							<!-- 	                            <a href="school" class="nav-link"> -->
+							<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
+							<!-- 	                                <span>Add School</span> -->
+							<!-- 	                            </a> -->
+							<!-- 	                        </li> -->
+
+							<li class="nav-item"><a href="/school1/student_add"
+								class="nav-link"> <i class="fa fa-plus nav-icon"
+									style="color: orange;"></i> <span>ઉમેરો</span>
+							</a></li>
+							<li class="nav-item"><a href="/school1/student_view"
+								class="nav-link"> <i class="fa fa-eye nav-icon"
+									style="color: orange;"></i> <span>જુઓ</span>
+							</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa-wpforms" style="color: orange;"></i>
+							<p>
+								પરિણામ<i class="right fa fa-angle-left" style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/school1/marks_a"
+								class="nav-link"> <i class="fa fa-plus nav-icon"
+									style="color: orange;"></i> <span>ગુણ ઉમેરો</span>
+							</a></li>
+							<li class="nav-item"><a href="/school1/marks_view"
+								class="nav-link"> <i class="fa fa-eye nav-icon"
+									style="color: orange;"></i> <span>જુઓ / છાપો</span>
+							</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa-file" style="color: orange;"></i>
+							<p>
+								દસ્તાવેજો<i class="right fa fa-angle-left"
+									style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/school1/bonafide"
+								class="nav-link"> <i class="fa fa-file nav-icon"
+									style="color: orange;"></i> <span>બોનાફાઇડ પ્રમાણપત્ર</span>
+							</a></li>
+							<li class="nav-item"><a href="/school1/leaving"
+								class="nav-link"> <i class="fa fa-file nav-icon"
+									style="color: orange;"></i> <span>પ્રમાણપત્ર છોડવું</span>
+							</a></li>
+							<!-- <li class="nav-item">
 	                            <a href="/school1/leaving/get" class="nav-link">
 	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
 	                                <span>પ્રમાણપત્ર છોડવું</span>
 	                            </a>
 	                        </li> -->
-	                    </ul>
-	                </li>
-	            </ul>
-	        </nav>
-	    </div>
+						</ul></li>
+				</ul>
+			</nav>
+		</div>
 	</aside>
 </th:block>
 
@@ -178,254 +186,255 @@
 
 
 <th:block th:fragment="sidebar_school2">
-	<aside class="main-sidebar sidebar-dark-secondary elevation-4" style="background-color:#48494B!important;">
-	<!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3  d-flex" >
-        <div class="image">
-          <img  style="width: 11.1rem!important;" src="/dist/img/school/sc2.png" class="img-squre elevation-2" alt="User Image">
-        </div>
-      </div>
-	    <!-- Brand Logo -->
-	    <a href="#" class="brand-link">
-	        <span class="brand-text"><span class="font-weight-bold">મંદબુદ્ધિના બાળકોની <br> વિવિધલક્ષી વિદ્યાલય</span></span>
-	    </a>
-	    <div class="sidebar">
-	        <nav class="mt-2">
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview menu-open">
-	                    <a href="/" class="nav-link active">
-	                        <i class="nav-icon fa fa-dashboard" style="color: orange;"></i>
-	                        <span>ડેશબોર્ડ</span>
-	                    </a>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa-user" style="color: orange;"></i>
-	                        <p>વિદ્યાર્થી નોંધણી<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-<!-- 	                        <li class="nav-item"> -->
-<!-- 	                            <a href="school" class="nav-link"> -->
-<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
-<!-- 	                                <span>Add School</span> -->
-<!-- 	                            </a> -->
-<!-- 	                        </li> -->
-	
-	                        <li class="nav-item">
-	                            <a href="/school2/student_add" class="nav-link">
-	                                <i class="fa fa-plus nav-icon" style="color: orange;"></i>
-	                                <span>ઉમેરો</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school2/student_view" class="nav-link">
-	                                <i class="fa fa-eye nav-icon" style="color: orange;"></i>
-	                                <span>જુઓ</span>
-	                            </a>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa-wpforms" style="color: orange;"></i>
-	                        <p>પરિણામ<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-	                        <li class="nav-item">
-	                            <a href="/school2/marks_a" class="nav-link">
-	                                <i class="fa fa-plus nav-icon" style="color: orange;"></i>
-	                                <span>ગુણ ઉમેરો</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school2/marks_view" class="nav-link">
-	                                <i class="fa fa-eye nav-icon" style="color: orange;"></i>
-	                                <span>જુઓ / છાપો</span>
-	                            </a>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa fa-file" style="color: orange;"></i>
-	                        <p>દસ્તાવેજો<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-	                        <li class="nav-item">
-	                            <a href="/school2/bonafide" class="nav-link">
-	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
-	                                <span>બોનાફાઇડ પ્રમાણપત્ર</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school2/leaving" class="nav-link">
-	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
-	                                <span>પ્રમાણપત્ર છોડવું</span>
-	                            </a>
-	                        </li>
-	                        <!-- <li class="nav-item">
+	<aside class="main-sidebar sidebar-dark-secondary elevation-4"
+		style="background-color: #48494B !important;">
+		<!-- Sidebar user panel (optional) -->
+		<div class="user-panel mt-3 pb-3  d-flex">
+			<div class="image">
+				<img style="width: 11.1rem !important;"
+					src="/dist/img/school/sc2.png" class="img-squre elevation-2"
+					alt="User Image">
+			</div>
+		</div>
+		<!-- Brand Logo -->
+		<a href="#" class="brand-link"> <span class="brand-text"><span
+				class="font-weight-bold">મંદબુદ્ધિના બાળકોની <br>
+					વિવિધલક્ષી વિદ્યાલય
+			</span></span>
+		</a>
+		<div class="sidebar">
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview menu-open"><a href="/"
+						class="nav-link active"> <i class="nav-icon fa fa-dashboard"
+							style="color: orange;"></i> <span>ડેશબોર્ડ</span>
+					</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa-user" style="color: orange;"></i>
+							<p>
+								વિદ્યાર્થી નોંધણી<i class="right fa fa-angle-left"
+									style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<!-- 	                        <li class="nav-item"> -->
+							<!-- 	                            <a href="school" class="nav-link"> -->
+							<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
+							<!-- 	                                <span>Add School</span> -->
+							<!-- 	                            </a> -->
+							<!-- 	                        </li> -->
+
+							<li class="nav-item"><a href="/school2/student_add"
+								class="nav-link"> <i class="fa fa-plus nav-icon"
+									style="color: orange;"></i> <span>ઉમેરો</span>
+							</a></li>
+							<li class="nav-item"><a href="/school2/student_view"
+								class="nav-link"> <i class="fa fa-eye nav-icon"
+									style="color: orange;"></i> <span>જુઓ</span>
+							</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa-wpforms" style="color: orange;"></i>
+							<p>
+								પરિણામ<i class="right fa fa-angle-left" style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/school2/marks_a"
+								class="nav-link"> <i class="fa fa-plus nav-icon"
+									style="color: orange;"></i> <span>ગુણ ઉમેરો</span>
+							</a></li>
+							<li class="nav-item"><a href="/school2/marks_view"
+								class="nav-link"> <i class="fa fa-eye nav-icon"
+									style="color: orange;"></i> <span>જુઓ / છાપો</span>
+							</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa fa-file" style="color: orange;"></i>
+							<p>
+								દસ્તાવેજો<i class="right fa fa-angle-left"
+									style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/school2/bonafide"
+								class="nav-link"> <i class="fa fa-file nav-icon"
+									style="color: orange;"></i> <span>બોનાફાઇડ પ્રમાણપત્ર</span>
+							</a></li>
+							<li class="nav-item"><a href="/school2/leaving"
+								class="nav-link"> <i class="fa fa-file nav-icon"
+									style="color: orange;"></i> <span>પ્રમાણપત્ર છોડવું</span>
+							</a></li>
+							<!-- <li class="nav-item">
 	                            <a href="/school2/leaving/get" class="nav-link">
 	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
 	                                <span>પ્રમાણપત્ર છોડવું</span>
 	                            </a>
 	                        </li> -->
-	                    </ul>
-	                </li>
-	            </ul>
-	        </nav>
-	    </div>
+						</ul></li>
+				</ul>
+			</nav>
+		</div>
 	</aside>
 </th:block>
 
 
 
-	<th:block th:fragment="sidebar_school3">
-	<aside class="main-sidebar sidebar-dark-secondary elevation-4" style="background-color:#48494B!important;">
-	<!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3  d-flex" >
-        <div class="image">
-          <img  style="width: 11.1rem!important;" src="/dist/img/school/sc3.png" class="img-squre elevation-2" alt="User Image">
-        </div>
-      </div>
-	    <!-- Brand Logo -->
-	    <a href="#" class="brand-link">
-	        <span class="brand-text"><span class="font-weight-bold">શ્રી મ. સ. કોઠારી મૂક- બધિર <br>માધ્યમિક અને ઉચ્ચતર <br>માધ્યમિક શાળા</span></span>
-	    </a>
-	    <div class="sidebar">
-	        <nav class="mt-2">
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview menu-open">
-	                    <a href="/" class="nav-link active">
-	                        <i class="nav-icon fa fa-dashboard" style="color: orange;"></i>
-	                        <span>ડેશબોર્ડ</span>
-	                    </a>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa-user" style="color: orange;"></i>
-	                        <p>વિદ્યાર્થી નોંધણી<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-<!-- 	                        <li class="nav-item"> -->
-<!-- 	                            <a href="school" class="nav-link"> -->
-<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
-<!-- 	                                <span>Add School</span> -->
-<!-- 	                            </a> -->
-<!-- 	                        </li> -->
-	
-	                        <li class="nav-item">
-	                            <a href="/school3/student_add" class="nav-link">
-	                                <i class="fa fa-plus nav-icon" style="color: orange;"></i>
-	                                <span>ઉમેરો</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school3/student_view" class="nav-link">
-	                                <i class="fa fa-eye nav-icon" style="color: orange;"></i>
-	                                <span>જુઓ</span>
-	                            </a>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa-wpforms" style="color: orange;"></i>
-	                        <p>પરિણામ<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-	                        <li class="nav-item">
-	                            <a href="/school3/marks_a" class="nav-link">
-	                                <i class="fa fa-plus nav-icon" style="color: orange;"></i>
-	                                <span>ગુણ ઉમેરો (8-9-10)</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school3/marks_b" class="nav-link">
-	                                <i class="fa fa-plus nav-icon" style="color: orange;"></i>
-	                                <span>ગુણ ઉમેરો (11-12)</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school3/attendance" class="nav-link">
-	                                <i class="fa fa-plus nav-icon" style="color: orange;"></i>
-	                                <span>હાજરી ઉમેરો</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school3/marks_view" class="nav-link">
-	                                <i class="fa fa-eye nav-icon" style="color: orange;"></i>
-	                                <span>જુઓ / છાપો</span>
-	                            </a>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	                <li class="nav-item has-treeview">
-	                    <a href="#" class="nav-link">
-	                        <i class="nav-icon fa fa-file" style="color: orange;"></i>
-	                        <p>દસ્તાવેજો<i class="right fa fa-angle-left" style="color: orange;"></i></p>
-	                    </a>
-	                    <ul class="nav nav-treeview">
-	                        <li class="nav-item">
-	                            <a href="/school3/bonafide" class="nav-link">
-	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
-	                                <span>બોનાફાઇડ પ્રમાણપત્ર</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school3/leaving" class="nav-link">
-	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
-	                                <span>છોડવાનું પ્રમાણપત્ર</span>
-	                            </a>
-	                        </li>
-	                        <li class="nav-item">
-	                            <a href="/school3/trial" class="nav-link">
-	                                <i class="fa fa-file nav-icon" style="color: orange;"></i>
-	                                <span>પગેરું પ્રમાણપત્ર</span>
-	                            </a>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </nav>
-	    </div>
+<th:block th:fragment="sidebar_school3">
+	<aside class="main-sidebar sidebar-dark-secondary elevation-4"
+		style="background-color: #48494B !important;">
+		<!-- Sidebar user panel (optional) -->
+		<div class="user-panel mt-3 pb-3  d-flex">
+			<div class="image">
+				<img style="width: 11.1rem !important;"
+					src="/dist/img/school/sc3.png" class="img-squre elevation-2"
+					alt="User Image">
+			</div>
+		</div>
+		<!-- Brand Logo -->
+		<a href="#" class="brand-link"> <span class="brand-text"><span
+				class="font-weight-bold">શ્રી મ. સ. કોઠારી મૂક- બધિર <br>માધ્યમિક
+					અને ઉચ્ચતર <br>માધ્યમિક શાળા
+			</span></span>
+		</a>
+		<div class="sidebar">
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview menu-open"><a href="/"
+						class="nav-link active"> <i class="nav-icon fa fa-dashboard"
+							style="color: orange;"></i> <span>ડેશબોર્ડ</span>
+					</a></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa-user" style="color: orange;"></i>
+							<p>
+								વિદ્યાર્થી નોંધણી<i class="right fa fa-angle-left"
+									style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<!-- 	                        <li class="nav-item"> -->
+							<!-- 	                            <a href="school" class="nav-link"> -->
+							<!-- 	                                <i class="fa fa-edit nav-icon"></i> -->
+							<!-- 	                                <span>Add School</span> -->
+							<!-- 	                            </a> -->
+							<!-- 	                        </li> -->
+
+							<li class="nav-item"><a href="/school3/student_add"
+								class="nav-link"> <i class="fa fa-plus nav-icon"
+									style="color: orange;"></i> <span>ઉમેરો</span>
+							</a></li>
+							<li class="nav-item"><a href="/school3/student_view"
+								class="nav-link"> <i class="fa fa-eye nav-icon"
+									style="color: orange;"></i> <span>જુઓ</span>
+							</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa-wpforms" style="color: orange;"></i>
+							<p>
+								પરિણામ<i class="right fa fa-angle-left" style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/school3/marks_a"
+								class="nav-link"> <i class="fa fa-plus nav-icon"
+									style="color: orange;"></i> <span>ગુણ ઉમેરો (8-9-10)</span>
+							</a></li>
+							<li class="nav-item"><a href="/school3/marks_b"
+								class="nav-link"> <i class="fa fa-plus nav-icon"
+									style="color: orange;"></i> <span>ગુણ ઉમેરો (11-12)</span>
+							</a></li>
+							<li class="nav-item"><a href="/school3/attendance"
+								class="nav-link"> <i class="fa fa-plus nav-icon"
+									style="color: orange;"></i> <span>હાજરી ઉમેરો</span>
+							</a></li>
+							<li class="nav-item"><a href="/school3/marks_view"
+								class="nav-link"> <i class="fa fa-eye nav-icon"
+									style="color: orange;"></i> <span>જુઓ / છાપો</span>
+							</a></li>
+						</ul></li>
+				</ul>
+				<ul class="nav nav-pills nav-sidebar flex-column"
+					data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview"><a href="#" class="nav-link">
+							<i class="nav-icon fa fa-file" style="color: orange;"></i>
+							<p>
+								દસ્તાવેજો<i class="right fa fa-angle-left"
+									style="color: orange;"></i>
+							</p>
+					</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item"><a href="/school3/bonafide"
+								class="nav-link"> <i class="fa fa-file nav-icon"
+									style="color: orange;"></i> <span>બોનાફાઇડ પ્રમાણપત્ર</span>
+							</a></li>
+							<li class="nav-item"><a href="/school3/leaving"
+								class="nav-link"> <i class="fa fa-file nav-icon"
+									style="color: orange;"></i> <span>છોડવાનું પ્રમાણપત્ર</span>
+							</a></li>
+							<li class="nav-item"><a href="/school3/trial"
+								class="nav-link"> <i class="fa fa-file nav-icon"
+									style="color: orange;"></i> <span>પગેરું પ્રમાણપત્ર</span>
+							</a></li>
+						</ul></li>
+				</ul>
+			</nav>
+		</div>
 	</aside>
 </th:block>
-	
-	
+
+
 <th:block th:fragment="footer">
 	<footer class="main-footer">
 		<div class="float-right d-sm-none d-md-block">Alligate Systems</div>
-		<strong>Copyright &copy; 2020 <a href="https://alligate-systems-software-company.business.site/">Alligate Systems</a>.</strong> All rights reserved.
+		<strong>Copyright &copy; 2020 <a
+			href="https://alligate-systems-software-company.business.site/">Alligate
+				Systems</a>.
+		</strong> All rights reserved.
 	</footer>
 </th:block>
 
 
 <th:block th:fragment="jsscript">
 	<script type="text/javascript" th:src="@{../plugins/jquery/jquery.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	<script type="text/javascript" th:src="@{../dist/js/adminlte.js}"></script>
 	<script type="text/javascript" th:src="@{../dist/js/demo.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/slimScroll/jquery.slimscroll.min.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/datatables/jquery.dataTables.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/SweetAlert2/sweetalert2.min.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/daterangepicker/daterangepicker.js}"></script>
-	<script type="text/javascript" th:src="@{../plugins/datepicker/bootstrap-datepicker.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/slimScroll/jquery.slimscroll.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/datatables/jquery.dataTables.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/SweetAlert2/sweetalert2.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/daterangepicker/daterangepicker.js}"></script>
+	<script type="text/javascript"
+		th:src="@{../plugins/datepicker/bootstrap-datepicker.js}"></script>
 </th:block>
 
 

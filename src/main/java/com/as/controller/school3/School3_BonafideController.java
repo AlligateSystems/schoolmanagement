@@ -10,7 +10,6 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -57,10 +56,6 @@ public class School3_BonafideController {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-yy");
 			Docx docx = new Docx(cpr.getInputStream());
 			docx.setVariablePattern(new VariablePattern("#{", "}"));
-			List<String> findVariables = docx.findVariables();
-			for (String var : findVariables) {
-				System.out.println("VARIABLE => " + var);
-			}
 			Variables var = new Variables();
 			var.addTextVariable(new TextVariable("#{date}", formatter.format(dt)));
 			var.addTextVariable(new TextVariable("#{name}",

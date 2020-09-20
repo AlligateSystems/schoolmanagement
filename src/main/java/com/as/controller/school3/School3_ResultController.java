@@ -98,17 +98,11 @@ public class School3_ResultController {
 				ClassPathResource cpr = new ClassPathResource(env.getProperty("school3.result.11_12.doc.filePath"));
 				Docx docx = new Docx(cpr.getInputStream());
 				docx.setVariablePattern(new VariablePattern("#{", "}"));
-				List<String> findVariables = docx.findVariables();
-				for (String var : findVariables) {
-					System.out.println("VARIABLE => " + var);
-				}
 				Variables var = new Variables();
-
 				var.addTextVariable(new TextVariable("#{name}",
 						student.getFirstName() + " " + student.getMiddleName() + " " + student.getLastName()));
 				var.addTextVariable(new TextVariable("#{std}", student.getClassIn()));
 				var.addTextVariable(new TextVariable("#{roll}", student.getRollNumber()));
-
 				for (School3_AttendenceEntity attend : attendaceList) {
 					if (attend.getMonth().equalsIgnoreCase("June")) {
 						var.addTextVariable(new TextVariable("#{t1}", attend.getTotal()));
@@ -239,10 +233,6 @@ public class School3_ResultController {
 				ClassPathResource cpr = new ClassPathResource(env.getProperty("school3.result.8_9_10.doc.filePath"));
 				Docx docx = new Docx(cpr.getInputStream());
 				docx.setVariablePattern(new VariablePattern("#{", "}"));
-				List<String> findVariables = docx.findVariables();
-				for (String var : findVariables) {
-					System.out.println("VARIABLE => " + var);
-				}
 				Variables var = new Variables();
 				var.addTextVariable(new TextVariable("#{name}",
 						student.getFirstName() + " " + student.getMiddleName() + " " + student.getLastName()));

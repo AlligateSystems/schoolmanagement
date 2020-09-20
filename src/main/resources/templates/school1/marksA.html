@@ -2,178 +2,229 @@
 <html lang="en">
 
 <head>
-
-    <head th:include="template :: headFragment(${pageTitle})"></head>
-    <style>
-        .custom-select {
-            background: none !important;
-        }
-    </style>
+<head th:include="template :: headFragment(${pageTitle})"></head>
+<style>
+.custom-select {
+	background: none !important;
+}
+</style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div th:replace="template :: navbar"></div>
-        <div th:replace="template :: sidebar_school1"></div>
+	<div class="wrapper">
+		<div th:replace="template :: navbar"></div>
+		<div th:replace="template :: sidebar_school1"></div>
 
-        <!-- ------------------Work Below------------------ -->
-        <div class="content-wrapper">
-            <div class="content-header"></div>
-            <section class="content">
-                <div class="container-fluid">
+		<!-- ------------------Work Below------------------ -->
+		<div class="content-wrapper">
+			<div class="content-header"></div>
+			<section class="content">
+				<div class="container-fluid">
 
-                    <!-- Form Fields -->
-                    <div class="card card-primary">
-                        <div class="card-header"><h4>વિદ્યાર્થી ગુણ ઉમેરો </h4></div>
-                        <div class="card-body">
-                            <form class="" id="CustomeForm" method="post">
-                                <div class="row">
-                                	<div class="col-md-12">
+					<!-- Form Fields -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h4>વિદ્યાર્થી ગુણ ઉમેરો</h4>
+						</div>
+						<div class="card-body">
+							<form class="" id="CustomeForm" method="post">
+								<div class="row">
+									<div class="col-md-12">
 										<div class="form-group d-none">
-											<label>ID</label> <input class="form-control" id="id" name="id">
+											<label>ID</label> <input class="form-control" id="id"
+												name="id">
 										</div>
 									</div>
-									
-                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>રજિસ્ટર નંબર  <span class="text-danger">*</span></label>
-                                        <input type="text" id="registerNumber" name="registerNumber" placeholder="રજિસ્ટર નંબર" class="form-control">
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>રોલ નંબર</label>
-                                        <input type="text" id="rollNumber" name="rollNumber" placeholder="રોલ નંબર" class="form-control">
-                                    </div>
-                                    
-                                    <table class="table">
-									  <thead>
-									    <tr>
-									      <th scope="col">વિષય</th>
-									      <th scope="col">કુલ ગુણ</th>
-									      <th scope="col">મેળવેલ ગુણ</th>
-									      <th scope="col">મેળવેલ ગ્રેડ</th>
-									      <th scope="col">વિષયના સંદર્ભમાં વિશેષ નોંધ</th>
-									    </tr>
-									  </thead>
-									  <tbody>
-									    <tr>
-									      <td scope="row"><label>ગુજરાતી</label></td>
-									      <td><input type="text" id="totalGujarati" name="totalGujarati"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksGujarati" name="obtainedMarksGujarati"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeGujarati" name="obtainedGradeGujarati"  class="form-control"></td>
-									      <td><input type="text" id="noteGujarati" name="noteGujarati"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ગણિત</label></td>
-									      <td><input type="text" id="totalMathematics" name="totalMathematics"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksMathematics" name="obtainedMarksMathematics"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeMathematics" name="obtainedGradeMathematics"  class="form-control"></td>
-									      <td><input type="text" id="noteMathematics" name="noteMathematics"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>વિજ્ઞાન અને ટચનોલોજી </label></td>
-									      <td><input type="text" id="totalScienceTechnology" name="totalScienceTechnology"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksScienceTechnology" name="obtainedMarksScienceTechnology"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeScienceTechnology" name="obtainedGradeScienceTechnology"  class="form-control"></td>
-									      <td><input type="text" id="noteScienceTechnology" name="noteScienceTechnology"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>સામાજિક વિજ્ઞાન</label></td>
-									      <td><input type="text" id="totalSocialScience" name="totalSocialScience"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksSocialScience" name="obtainedMarksSocialScience"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeSocialScience" name="obtainedGradeSocialScience"  class="form-control"></td>
-									      <td><input type="text" id="noteSocialScience" name="noteSocialScience"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>હિન્દી</label></td>
-									     <td><input type="text" id="totalHindi" name="totalHindi"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksHindi" name="obtainedMarksHindi"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeHindi" name="obtainedGradeHindi"  class="form-control"></td>
-									      <td><input type="text" id="noteHindi" name="noteHindi"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>અંગ્રેજી</label></td>
-									     <td><input type="text" id="totalEnglish" name="totalEnglish"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksEnglish" name="obtainedMarksEnglish"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeEnglish" name="obtainedGradeEnglish"  class="form-control"></td>
-									      <td><input type="text" id="noteEnglish" name="noteEnglish"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>સંસ્કૃત</label></td>
-										  <td><input type="text" id="totalSanskrit" name="totalSanskrit"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksSanskrit" name="obtainedMarksSanskrit"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeSanskrit" name="obtainedGradeSanskrit"  class="form-control"></td>
-									      <td><input type="text" id="noteSanskrit" name="noteSanskrit"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ઉદ્યોગ</label></td>
-										  <td><input type="text" id="totalIndustry" name="totalIndustry"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksIndustry" name="obtainedMarksIndustry"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeIndustry" name="obtainedGradeIndustry"  class="form-control"></td>
-									      <td><input type="text" id="noteIndustry" name="noteIndustry"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>કમ્પ્યુટર</label></td>
-										  <td><input type="text" id="totalComputer" name="totalComputer"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksComputer" name="obtainedMarksComputer"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradeComputer" name="obtainedGradeComputer"  class="form-control"></td>
-									      <td><input type="text" id="noteComputer" name="noteComputer"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ચિત્ર</label></td>
-										  <td><input type="text" id="totalPicture" name="totalPicture"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksPicture" name="obtainedMarksPicture"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradePicture" name="obtainedGradePicture"  class="form-control"></td>
-									      <td><input type="text" id="notePicture" name="notePicture"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>પી.ટી</label></td>
-										  <td><input type="text" id="totalPT" name="totalPT"  class="form-control"></td>
-									      <td><input type="text" id="obtainedMarksPT" name="obtainedMarksPT"  class="form-control"></td>
-									      <td><input type="text" id="obtainedGradePT" name="obtainedGradePT"  class="form-control"></td>
-									      <td><input type="text" id="notePT" name="notePT"  class="form-control"></td>
-									    </tr>
-									    
-									    
-									  </tbody>
+
+									<div class="col-xl-6 col-lg-6 col-12 form-group">
+										<label>રજિસ્ટર નંબર <span class="text-danger">*</span></label>
+										<input type="text" id="registerNumber" name="registerNumber"
+											placeholder="રજિસ્ટર નંબર" class="form-control">
+									</div>
+									<div class="col-xl-6 col-lg-6 col-12 form-group">
+										<label>રોલ નંબર</label> <input type="text" id="rollNumber"
+											name="rollNumber" placeholder="રોલ નંબર" class="form-control">
+									</div>
+
+									<table class="table">
+										<thead>
+											<tr>
+												<th scope="col">વિષય</th>
+												<th scope="col">કુલ ગુણ</th>
+												<th scope="col">મેળવેલ ગુણ</th>
+												<th scope="col">મેળવેલ ગ્રેડ</th>
+												<th scope="col">વિષયના સંદર્ભમાં વિશેષ નોંધ</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td scope="row"><label>ગુજરાતી</label></td>
+												<td><input type="text" id="totalGujarati"
+													name="totalGujarati" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksGujarati"
+													name="obtainedMarksGujarati" class="form-control"></td>
+												<td><input type="text" id="obtainedGradeGujarati"
+													name="obtainedGradeGujarati" class="form-control"></td>
+												<td><input type="text" id="noteGujarati"
+													name="noteGujarati" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ગણિત</label></td>
+												<td><input type="text" id="totalMathematics"
+													name="totalMathematics" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksMathematics"
+													name="obtainedMarksMathematics" class="form-control"></td>
+												<td><input type="text" id="obtainedGradeMathematics"
+													name="obtainedGradeMathematics" class="form-control"></td>
+												<td><input type="text" id="noteMathematics"
+													name="noteMathematics" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>વિજ્ઞાન અને ટચનોલોજી </label></td>
+												<td><input type="text" id="totalScienceTechnology"
+													name="totalScienceTechnology" class="form-control"></td>
+												<td><input type="text"
+													id="obtainedMarksScienceTechnology"
+													name="obtainedMarksScienceTechnology" class="form-control"></td>
+												<td><input type="text"
+													id="obtainedGradeScienceTechnology"
+													name="obtainedGradeScienceTechnology" class="form-control"></td>
+												<td><input type="text" id="noteScienceTechnology"
+													name="noteScienceTechnology" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>સામાજિક વિજ્ઞાન</label></td>
+												<td><input type="text" id="totalSocialScience"
+													name="totalSocialScience" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksSocialScience"
+													name="obtainedMarksSocialScience" class="form-control"></td>
+												<td><input type="text" id="obtainedGradeSocialScience"
+													name="obtainedGradeSocialScience" class="form-control"></td>
+												<td><input type="text" id="noteSocialScience"
+													name="noteSocialScience" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>હિન્દી</label></td>
+												<td><input type="text" id="totalHindi"
+													name="totalHindi" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksHindi"
+													name="obtainedMarksHindi" class="form-control"></td>
+												<td><input type="text" id="obtainedGradeHindi"
+													name="obtainedGradeHindi" class="form-control"></td>
+												<td><input type="text" id="noteHindi" name="noteHindi"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>અંગ્રેજી</label></td>
+												<td><input type="text" id="totalEnglish"
+													name="totalEnglish" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksEnglish"
+													name="obtainedMarksEnglish" class="form-control"></td>
+												<td><input type="text" id="obtainedGradeEnglish"
+													name="obtainedGradeEnglish" class="form-control"></td>
+												<td><input type="text" id="noteEnglish"
+													name="noteEnglish" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>સંસ્કૃત</label></td>
+												<td><input type="text" id="totalSanskrit"
+													name="totalSanskrit" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksSanskrit"
+													name="obtainedMarksSanskrit" class="form-control"></td>
+												<td><input type="text" id="obtainedGradeSanskrit"
+													name="obtainedGradeSanskrit" class="form-control"></td>
+												<td><input type="text" id="noteSanskrit"
+													name="noteSanskrit" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ઉદ્યોગ</label></td>
+												<td><input type="text" id="totalIndustry"
+													name="totalIndustry" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksIndustry"
+													name="obtainedMarksIndustry" class="form-control"></td>
+												<td><input type="text" id="obtainedGradeIndustry"
+													name="obtainedGradeIndustry" class="form-control"></td>
+												<td><input type="text" id="noteIndustry"
+													name="noteIndustry" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>કમ્પ્યુટર</label></td>
+												<td><input type="text" id="totalComputer"
+													name="totalComputer" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksComputer"
+													name="obtainedMarksComputer" class="form-control"></td>
+												<td><input type="text" id="obtainedGradeComputer"
+													name="obtainedGradeComputer" class="form-control"></td>
+												<td><input type="text" id="noteComputer"
+													name="noteComputer" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ચિત્ર</label></td>
+												<td><input type="text" id="totalPicture"
+													name="totalPicture" class="form-control"></td>
+												<td><input type="text" id="obtainedMarksPicture"
+													name="obtainedMarksPicture" class="form-control"></td>
+												<td><input type="text" id="obtainedGradePicture"
+													name="obtainedGradePicture" class="form-control"></td>
+												<td><input type="text" id="notePicture"
+													name="notePicture" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>પી.ટી</label></td>
+												<td><input type="text" id="totalPT" name="totalPT"
+													class="form-control"></td>
+												<td><input type="text" id="obtainedMarksPT"
+													name="obtainedMarksPT" class="form-control"></td>
+												<td><input type="text" id="obtainedGradePT"
+													name="obtainedGradePT" class="form-control"></td>
+												<td><input type="text" id="notePT" name="notePT"
+													class="form-control"></td>
+											</tr>
+
+
+										</tbody>
 									</table>
-                                    
-                                    
-                                    <div class="col-12 form-group mg-t-8">
-                                        <button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
-                                        <!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
-                                        <button id="btnReset" type="reset" class="btn btn-danger">ફરીથી સેટ કરો</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+
+
+									<div class="col-12 form-group mg-t-8">
+										<button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
+										<!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
+										<button id="btnReset" type="reset" class="btn btn-danger">ફરીથી
+											સેટ કરો</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 					<!-- Form Fields -->
 
-                    <!-- Data Table -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h4 class="float-left">વિદ્યાર્થી યાદી</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="customTable" class="table display data-table text-nowrap">
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+					<!-- Data Table -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h4 class="float-left">વિદ્યાર્થી યાદી</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="customTable"
+									class="table display data-table text-nowrap">
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 
 
-                </div>
-            </section>
-        </div>
-        <!-- ------------------Work Above ------------------ -->
-        
-    </div>
-    <div th:replace="template :: jsscript"></div>
-    
-    
-   <script>
+				</div>
+			</section>
+		</div>
+		<!-- ------------------Work Above ------------------ -->
+
+	</div>
+	<div th:replace="template :: jsscript"></div>
+
+
+	<script>
     $(document).ready(function() {
     	
     	$('input[type="text"]').change(function(){
@@ -237,6 +288,8 @@
 						columns : [ 
 							{ title : "રજિસ્ટર નંબર" ,  "data": "registerNumber"  },
 							{ title : "રોલ નંબર" ,  "data": "rollNumber"  },
+							{ title : "નામ" ,  "data": "fullName"  },
+							{ title : "વર્ગ" ,  "data": "classIn"  },
 							{
 								title : "ક્રિયા",
 				                "orderable":      false,
@@ -295,7 +348,6 @@
                      cache: false,
                      processData: false
                  }).done(function (data) {
-                 	console.log(data)
                  	if (data.status == 200) {
                          swal({
                          	title: "Alert !",
@@ -329,7 +381,7 @@
         
     });
     </script>
-    
- <div th:replace="template :: footer"></div>   
+
+	<div th:replace="template :: footer"></div>
 </body>
 </html>

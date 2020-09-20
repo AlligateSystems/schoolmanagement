@@ -2,144 +2,168 @@
 <html lang="en">
 
 <head>
-
-    <head th:include="template :: headFragment(${pageTitle})"></head>
-    <style>
-        .custom-select {
-            background: none !important;
-        }
-    </style>
+<head th:include="template :: headFragment(${pageTitle})"></head>
+<style>
+.custom-select {
+	background: none !important;
+}
+</style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div th:replace="template :: navbar"></div>
-        <div th:replace="template :: sidebar_school2"></div>
+	<div class="wrapper">
+		<div th:replace="template :: navbar"></div>
+		<div th:replace="template :: sidebar_school2"></div>
 
-        <!-- ------------------Work Below------------------ -->
-        <div class="content-wrapper">
-            <div class="content-header"></div>
-            <section class="content">
-                <div class="container-fluid">
+		<!-- ------------------Work Below------------------ -->
+		<div class="content-wrapper">
+			<div class="content-header"></div>
+			<section class="content">
+				<div class="container-fluid">
 
-                    <!-- Form Fields -->
-                    <div class="card card-primary">
-                        <div class="card-header"><h4>વિદ્યાર્થી ગુણ ઉમેરો </h4></div>
-                        <div class="card-body">
-                            <form class="" id="CustomeForm" method="post">
-                                <div class="row">
-                                	<div class="col-md-12">
+					<!-- Form Fields -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h4>વિદ્યાર્થી ગુણ ઉમેરો</h4>
+						</div>
+						<div class="card-body">
+							<form class="" id="CustomeForm" method="post">
+								<div class="row">
+									<div class="col-md-12">
 										<div class="form-group d-none">
-											<label>ID</label> <input class="form-control" id="id" name="id">
+											<label>ID</label> <input class="form-control" id="id"
+												name="id">
 										</div>
 									</div>
-									
-                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>રજિસ્ટર નંબર  <span class="text-danger">*</span></label>
-                                        <input type="text" id="registerNumber" name="registerNumber" placeholder="રજિસ્ટર નંબર" class="form-control">
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>રોલ નંબર</label>
-                                        <input type="text" id="rollNumber" name="rollNumber" placeholder="રોલ નંબર" class="form-control">
-                                    </div>
-                                    
-                                    <table class="table">
-									  <thead>
-									    <tr>
-									      <th scope="col">વિષય</th>
-									      <th scope="col">મેળવેલ ગ્રેડ</th>
-									      <th scope="col">મેળવેલ ગ્રેડ વિષયના સંદર્ભમાં વિશેષ નોંધ</th>
-									    </tr>
-									  </thead>
-									  <tbody>
-									    <tr>
-									      <td scope="row"><label>જાત સંભાળની આવડત</label></td>
-									      <td><input type="text" id="qualitySkillsGrade" name="qualitySkillsGrade"  class="form-control"></td>
-									      <td><input type="text" id="qualitySkillsNote" name="qualitySkillsNote"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>સામાન્ય જ્ઞાન</label></td>
-									      <td><input type="text" id="generalknowledgeGrade" name="generalknowledgeGrade"  class="form-control"></td>
-									      <td><input type="text" id="generalknowledgeNote" name="generalknowledgeNote"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ભાષા </label></td>
-									      <td><input type="text" id="languageGrade" name="languageGrade"  class="form-control"></td>
-									      <td><input type="text" id="languageNote" name="languageNote"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ગણિત</label></td>
-									      <td><input type="text" id="mathematicsGrade" name="mathematicsGrade"  class="form-control"></td>
-									      <td><input type="text" id="mathematicsNote" name="mathematicsNote"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>પર્યાવરણ/વિજ્ઞાન</label></td>
-									     <td><input type="text" id="environmentScienceGrade" name="environmentScienceGrade"  class="form-control"></td>
-									      <td><input type="text" id="environmentScienceNote" name="environmentScienceNote"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ચિત્રકામ</label></td>
-									      <td><input type="text" id="drawingGrade" name="drawingGrade"  class="form-control"></td>
-									      <td><input type="text" id="drawingNote" name="drawingNote"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>શારીરિક શિક્ષણ</label></td>
-										  <td><input type="text" id="physicalEducationGrade" name="physicalEducationGrade"  class="form-control"></td>
-									      <td><input type="text" id="physicalEducationNote" name="physicalEducationNote"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>સંગીત</label></td>
-										  <td><input type="text" id="musicGrade" name="musicGrade"  class="form-control"></td>
-									      <td><input type="text" id="musicNote" name="musicNote"  class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>કુલ...</label></td>
-										  <td><input type="text" id="totalGrade" name="totalGrade"  class="form-control"></td>
-									      <td><input type="text" id="totalNote" name="totalNote"  class="form-control"></td>
-									    </tr>
-									    
-									    
-									  </tbody>
+
+									<div class="col-xl-6 col-lg-6 col-12 form-group">
+										<label>રજિસ્ટર નંબર <span class="text-danger">*</span></label>
+										<input type="text" id="registerNumber" name="registerNumber"
+											placeholder="રજિસ્ટર નંબર" class="form-control">
+									</div>
+									<div class="col-xl-6 col-lg-6 col-12 form-group">
+										<label>રોલ નંબર</label> <input type="text" id="rollNumber"
+											name="rollNumber" placeholder="રોલ નંબર" class="form-control">
+									</div>
+
+									<table class="table">
+										<thead>
+											<tr>
+												<th scope="col">વિષય</th>
+												<th scope="col">મેળવેલ ગ્રેડ</th>
+												<th scope="col">મેળવેલ ગ્રેડ વિષયના સંદર્ભમાં વિશેષ
+													નોંધ</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td scope="row"><label>જાત સંભાળની આવડત</label></td>
+												<td><input type="text" id="qualitySkillsGrade"
+													name="qualitySkillsGrade" class="form-control"></td>
+												<td><input type="text" id="qualitySkillsNote"
+													name="qualitySkillsNote" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>સામાન્ય જ્ઞાન</label></td>
+												<td><input type="text" id="generalknowledgeGrade"
+													name="generalknowledgeGrade" class="form-control"></td>
+												<td><input type="text" id="generalknowledgeNote"
+													name="generalknowledgeNote" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ભાષા </label></td>
+												<td><input type="text" id="languageGrade"
+													name="languageGrade" class="form-control"></td>
+												<td><input type="text" id="languageNote"
+													name="languageNote" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ગણિત</label></td>
+												<td><input type="text" id="mathematicsGrade"
+													name="mathematicsGrade" class="form-control"></td>
+												<td><input type="text" id="mathematicsNote"
+													name="mathematicsNote" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>પર્યાવરણ/વિજ્ઞાન</label></td>
+												<td><input type="text" id="environmentScienceGrade"
+													name="environmentScienceGrade" class="form-control"></td>
+												<td><input type="text" id="environmentScienceNote"
+													name="environmentScienceNote" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ચિત્રકામ</label></td>
+												<td><input type="text" id="drawingGrade"
+													name="drawingGrade" class="form-control"></td>
+												<td><input type="text" id="drawingNote"
+													name="drawingNote" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>શારીરિક શિક્ષણ</label></td>
+												<td><input type="text" id="physicalEducationGrade"
+													name="physicalEducationGrade" class="form-control"></td>
+												<td><input type="text" id="physicalEducationNote"
+													name="physicalEducationNote" class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>સંગીત</label></td>
+												<td><input type="text" id="musicGrade"
+													name="musicGrade" class="form-control"></td>
+												<td><input type="text" id="musicNote" name="musicNote"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>કુલ...</label></td>
+												<td><input type="text" id="totalGrade"
+													name="totalGrade" class="form-control"></td>
+												<td><input type="text" id="totalNote" name="totalNote"
+													class="form-control"></td>
+											</tr>
+
+
+										</tbody>
 									</table>
-                                    
-                                    
-                                    <div class="col-12 form-group mg-t-8">
-                                        <button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
-                                        <!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
-                                        <button id="btnReset" type="reset" class="btn btn-danger">ફરીથી સેટ કરો</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+
+
+									<div class="col-12 form-group mg-t-8">
+										<button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
+										<!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
+										<button id="btnReset" type="reset" class="btn btn-danger">ફરીથી
+											સેટ કરો</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 					<!-- Form Fields -->
 
-                    <!-- Data Table -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h4 class="float-left">વિદ્યાર્થી યાદી</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="customTable" class="table display data-table text-nowrap">
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+					<!-- Data Table -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h4 class="float-left">વિદ્યાર્થી યાદી</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="customTable"
+									class="table display data-table text-nowrap">
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 
 
-                </div>
-            </section>
-        </div>
-        <!-- ------------------Work Above ------------------ -->
-        
-    </div>
-    <div th:replace="template :: jsscript"></div>
-    
-    
-   <script>
+				</div>
+			</section>
+		</div>
+		<!-- ------------------Work Above ------------------ -->
+
+	</div>
+	<div th:replace="template :: jsscript"></div>
+
+
+	<script>
     $(document).ready(function() {
     	
     	$('input[type="text"]').change(function(){
@@ -203,6 +227,8 @@
 						columns : [ 
 							{ title : "રજિસ્ટર નંબર" ,  "data": "registerNumber"  },
 							{ title : "રોલ નંબર" ,  "data": "rollNumber"  },
+							{ title : "નામ" ,  "data": "fullName"  },
+							{ title : "વર્ગ" ,  "data": "classIn"  },
 							{
 								title : "ક્રિયા",
 				                "orderable":      false,
@@ -261,7 +287,6 @@
                      cache: false,
                      processData: false
                  }).done(function (data) {
-                 	console.log(data)
                  	if (data.status == 200) {
                          swal({
                          	title: "Alert !",
@@ -295,7 +320,7 @@
         
     });
     </script>
-    
- <div th:replace="template :: footer"></div>   
+
+	<div th:replace="template :: footer"></div>
 </body>
 </html>

@@ -54,7 +54,6 @@ public class School2_StudentController {
 
 	@PostMapping("school2/student/delete/{id}")
 	public @ResponseBody BaseResponse delete(@PathVariable(value = "id") int id) {
-		System.out.println(id);
 		return studentService.deleteStudent(id);
 	}
 

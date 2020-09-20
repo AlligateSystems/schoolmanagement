@@ -2,208 +2,232 @@
 <html lang="en">
 
 <head>
-
-    <head th:include="template :: headFragment(${pageTitle})"></head>
-    <style>
-        .custom-select {
-            background: none !important;
-        }
-    </style>
+<head th:include="template :: headFragment(${pageTitle})"></head>
+<style>
+.custom-select {
+	background: none !important;
+}
+</style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div th:replace="template :: navbar"></div>
-        <div th:replace="template :: sidebar_school2"></div>
+	<div class="wrapper">
+		<div th:replace="template :: navbar"></div>
+		<div th:replace="template :: sidebar_school2"></div>
 
-        <!-- ------------------Work Below------------------ -->
-        <div class="content-wrapper">
-            <div class="content-header"></div>
-            <section class="content">
-                <div class="container-fluid">
+		<!-- ------------------Work Below------------------ -->
+		<div class="content-wrapper">
+			<div class="content-header"></div>
+			<section class="content">
+				<div class="container-fluid">
 
-                    <!-- Form Fields -->
-                    <div class="modal fade" id="FormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					  <div class="modal-dialog modal-lg  modal-dialog-centered" role="document">
-					    <div class="modal-content card-primary  card-outline">
-					      <div class="modal-header">
-					        <h5 class="modal-title" id="exampleModalLabel">વિદ્યાર્થી સુધારો</h5>
-					      </div>
-					      <div class="modal-body">
-					      <form class="" id="StudentForm" method="post">
-                                <div class="row">
-                                	<div class="col-md-12">
-										<div class="form-group d-none">
-											<label>ID</label> <input class="form-control" id="id" name="id">
+					<!-- Form Fields -->
+					<div class="modal fade" id="FormModal" tabindex="-1" role="dialog"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg  modal-dialog-centered"
+							role="document">
+							<div class="modal-content card-primary  card-outline">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">વિદ્યાર્થી
+										સુધારો</h5>
+								</div>
+								<div class="modal-body">
+									<form class="" id="StudentForm" method="post">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group d-none">
+													<label>ID</label> <input class="form-control" id="id"
+														name="id">
+												</div>
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>રજિસ્ટર નંબર <span class="text-danger">*</span></label>
+												<input type="text" id="registerNumber" name="registerNumber"
+													placeholder="રજિસ્ટર નંબર" class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>રોલ નંબર <span class="text-danger">*</span></label> <input
+													type="text" id="rollNumber" name="rollNumber"
+													placeholder="રોલ નંબર" class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>પ્રથમ નામ <span class="text-danger">*</span></label>
+												<input type="text" id="firstName" name="firstName"
+													class="form-control" placeholder="પ્રથમ નામ">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>વચલું નામ <span class="text-danger">*</span></label>
+												<input type="text" id="middleName" name="middleName"
+													placeholder="વચલું નામ" class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>અટક <span class="text-danger">*</span></label> <input
+													type="text" id="lastName" name="lastName" placeholder="અટક"
+													class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>લિંગ <span class="text-danger">*</span></label> <select
+													class="custom-select" id="gender" name="gender">
+													<option value="">કૃપા કરીને જાતિ પસંદ કરો</option>
+													<option value="પુરુષ">પુરુષ</option>
+													<option value="સ્ત્રી">સ્ત્રી</option>
+													<option value="અન્ય">અન્ય</option>
+												</select>
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>જન્મ સ્થળ </label> <input type="text" id="birthPlace"
+													name="birthPlace" placeholder="જન્મ સ્થળ"
+													class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>જન્મ તારીખ <span class="text-danger">*</span></label>
+												<input type="date" id="dateOfBirth" name="dateOfBirth"
+													placeholder="dd/mm/yyyy" class="form-control"> <i
+													class="far fa-calendar-alt"></i>
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>ઉમર <span class="text-danger">*</span></label> <input
+													type="text" id="age" name="age" placeholder="ઉમર"
+													class="form-control"> <i
+													class="far fa-calendar-alt"></i>
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>પિતાનું નામ </label> <input type="text"
+													id="fatherName" name="fatherName" placeholder="પિતાનું નામ"
+													class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>માતાનું નામ <span class="text-danger">*</span></label>
+												<input type="text" id="motherName" name="motherName"
+													placeholder="માતાનું નામ" class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>પિતાનું વ્યવસાય </label> <input type="text"
+													id="occupation" name="occupation"
+													placeholder="પિતાનું વ્યવસાય" class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>જાતિ, પેટા જાતિ <span class="text-danger">*</span></label>
+												<input type="text" id="caste" name="caste"
+													placeholder="જાતિ, પેટા જાતિ" class="form-control">
+
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>સરનામું <span class="text-danger">*</span></label> <input
+													type="text" id="address" name="address"
+													placeholder="સરનામું" class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>સંપર્ક નંબર </label> <input type="text"
+													id="contactNumber" name="contactNumber"
+													placeholder="સંપર્ક નંબર" class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>ઇમેઇલ </label> <input type="email" id="email"
+													name="email" placeholder="ઇમેઇલ" class="form-control">
+											</div>
+
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>ધોરણ <span class="text-danger">*</span></label> <select
+													class="custom-select" id="classIn" name="classIn">
+													<option value="">કૃપા કરી પસંદ કરો *</option>
+													<option value="૧">૧</option>
+													<option value="૨">૨</option>
+													<option value="૩">૩</option>
+													<option value="૪">૪</option>
+													<option value="૫">૫</option>
+													<option value="૬">૬</option>
+													<option value="૭">૭</option>
+													<option value="૮">૮</option>
+													<option value="૯">૯</option>
+													<option value="૧૦">૧૦</option>
+													<option value="૧૧">૧૧</option>
+													<option value="૧૨">૧૨</option>
+												</select>
+											</div>
+
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>રક્ત જૂથ </label> <select class="custom-select"
+													id="bloodGroup" name="bloodGroup">
+													<option value="">કૃપા કરી પસંદ કરો</option>
+													<option value="A+">A+</option>
+													<option value="A-">A-</option>
+													<option value="B+">B+</option>
+													<option value="B-">B-</option>
+													<option value="O+">O+</option>
+													<option value="O-">O-</option>
+												</select>
+											</div>
+
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>વજન <span class="text-danger">*</span></label> <input
+													type="text" id="weight" name="weight" placeholder="વજન"
+													class="form-control">
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>ઉંચાઈ <span class="text-danger">*</span></label> <input
+													type="text" id="height" name="height" placeholder="ઉંચાઈ"
+													class="form-control">
+											</div>
+
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>બુદ્ધિઆંક <span class="text-danger">*</span></label>
+												<input type="text" id="iQ" name="iQ" placeholder="બુદ્ધિઆંક"
+													class="form-control">
+											</div>
+
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>મૂલ્યાંકન તારીખ <span class="text-danger">*</span></label>
+												<input type="date" id="evaluationdate" name="evaluationdate"
+													placeholder="dd/mm/yyyy" class="form-control"> <i
+													class="far fa-calendar-alt"></i>
+											</div>
+											<div class="col-xl-4 col-lg-6 col-12 form-group">
+												<label>દાખલ તારીખ <span class="text-danger">*</span></label>
+												<input type="date" id="dateInserted" name="dateInserted"
+													placeholder="dd/mm/yyyy" class="form-control"> <i
+													class="far fa-calendar-alt"></i>
+											</div>
+											<div class="col-12 form-group mg-t-8">
+												<button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
+												<button type="button" class="btn btn-dark"
+													data-dismiss="modal">બંધ ફોર્મ</button>
+											</div>
 										</div>
-									</div>
-									<div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>રજિસ્ટર નંબર <span class="text-danger">*</span></label>
-                                        <input type="text" id="registerNumber" name="registerNumber" placeholder="રજિસ્ટર નંબર" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>રોલ નંબર <span class="text-danger">*</span></label>
-                                        <input type="text" id="rollNumber" name="rollNumber" placeholder="રોલ નંબર" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>પ્રથમ નામ <span class="text-danger">*</span></label>
-                                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="પ્રથમ નામ">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>વચલું નામ <span class="text-danger">*</span></label>
-                                        <input type="text" id="middleName" name="middleName" placeholder="વચલું નામ" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>અટક <span class="text-danger">*</span></label>
-                                        <input type="text" id="lastName" name="lastName" placeholder="અટક" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>લિંગ <span class="text-danger">*</span></label>
-                                        <select class="custom-select" id="gender" name="gender">
-                                            <option value="">કૃપા કરીને જાતિ પસંદ કરો </option>
-                                            <option value="પુરુષ">પુરુષ</option>
-                                            <option value="સ્ત્રી">સ્ત્રી</option>
-                                            <option value="અન્ય">અન્ય</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>જન્મ સ્થળ </label>
-                                        <input type="text" id="birthPlace" name="birthPlace" placeholder="જન્મ સ્થળ" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>જન્મ તારીખ <span class="text-danger">*</span></label>
-                                        <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="dd/mm/yyyy" class="form-control">
-                                        <i class="far fa-calendar-alt"></i>
-                                    </div>
-                                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>ઉમર  <span class="text-danger">*</span></label>
-                                        <input type="text" id="age" name="age" placeholder="ઉમર" class="form-control">
-                                        <i class="far fa-calendar-alt"></i>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>પિતાનું નામ </label>
-                                        <input type="text" id="fatherName" name="fatherName" placeholder="પિતાનું નામ" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>માતાનું નામ  <span class="text-danger">*</span></label>
-                                        <input type="text" id="motherName" name="motherName" placeholder="માતાનું નામ" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>પિતાનું વ્યવસાય </label>
-                                        <input type="text" id="occupation" name="occupation" placeholder="પિતાનું વ્યવસાય" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>જાતિ, પેટા જાતિ  <span class="text-danger">*</span></label>
-                                        <input type="text" id="caste" name="caste" placeholder="જાતિ, પેટા જાતિ" class="form-control">
-                                        
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>સરનામું <span class="text-danger">*</span></label>
-                                        <input type="text" id="address" name="address" placeholder="સરનામું" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>સંપર્ક નંબર </label>
-                                        <input type="text" id="contactNumber" name="contactNumber" placeholder="સંપર્ક નંબર" class="form-control">
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>ઇમેઇલ </label>
-                                        <input type="email" id="email" name="email" placeholder="ઇમેઇલ" class="form-control">
-                                    </div>
-                                    
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-	                                    <label>ધોરણ  <span class="text-danger">*</span></label>
-	                                    <select class="custom-select" id="classIn" name="classIn">
-	                                        <option value="">કૃપા કરી પસંદ કરો *</option>
-	                                        <option value="૧">૧</option>
-	                                        <option value="૨">૨</option>
-	                                        <option value="૩">૩</option>
-	                                        <option value="૪">૪</option>
-	                                        <option value="૫">૫</option>
-	                                        <option value="૬">૬</option>
-	                                        <option value="૭">૭</option>
-	                                        <option value="૮">૮</option>
-	                                        <option value="૯">૯</option>
-	                                        <option value="૧૦">૧૦</option>
-	                                        <option value="૧૧">૧૧</option>
-	                                        <option value="૧૨">૧૨</option>
-	                                    </select>
-                                	</div>
-                                    
-                                    <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label>રક્ત જૂથ </label>
-                                    <select class="custom-select" id="bloodGroup" name="bloodGroup">
-                                        <option value="">કૃપા કરી પસંદ કરો </option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label>વજન  <span class="text-danger">*</span></label>
-                                    <input type="text" id="weight" name="weight" placeholder="વજન" class="form-control">
-                                </div>
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label>ઉંચાઈ  <span class="text-danger">*</span></label>
-                                    <input type="text" id="height" name="height" placeholder="ઉંચાઈ" class="form-control">
-                                </div>
-                                
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                    <label>બુદ્ધિઆંક  <span class="text-danger">*</span></label>
-                                    <input type="text" id="iQ" name="iQ" placeholder="બુદ્ધિઆંક" class="form-control">
-                                </div>
-                                
-                                <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                     <label>મૂલ્યાંકન તારીખ  <span class="text-danger">*</span></label>
-                                     <input type="date" id="evaluationdate" name="evaluationdate" placeholder="dd/mm/yyyy" class="form-control">
-                                     <i class="far fa-calendar-alt"></i>
-                                 </div>
-                                 <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                     <label>દાખલ તારીખ  <span class="text-danger">*</span></label>
-                                     <input type="date" id="dateInserted" name="dateInserted" placeholder="dd/mm/yyyy" class="form-control">
-                                     <i class="far fa-calendar-alt"></i>
-                                 </div>
-                                    <div class="col-12 form-group mg-t-8">
-                                        <button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
-                                        <button type="button" class="btn btn-dark" data-dismiss="modal">બંધ ફોર્મ</button>
-                                    </div>
-                                </div>
-                            </form>
-					      </div>
-					    </div>
-					  </div>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
 					<!-- Form Fields -->
 
-                    <!-- Data Table -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h4 class="float-left">વિદ્યાર્થી યાદી</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="customTable" class="table display data-table text-nowrap">
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-					 <!-- Data Table -->
+					<!-- Data Table -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h4 class="float-left">વિદ્યાર્થી યાદી</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="customTable"
+									class="table display data-table text-nowrap">
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- Data Table -->
 
-                </div>
-            </section>
-        </div>
-        <!-- ------------------Work Above ------------------ -->
-        
-    </div>
-    <div th:replace="template :: jsscript"></div>
-    
-    
-    <script>
+				</div>
+			</section>
+		</div>
+		<!-- ------------------Work Above ------------------ -->
+
+	</div>
+	<div th:replace="template :: jsscript"></div>
+
+
+	<script>
     $(document).ready(function() {
     	
     	$('input[type="text"]').change(function(){
@@ -436,7 +460,7 @@
         
     });
     </script>
-    
- <div th:replace="template :: footer"></div>     
+
+	<div th:replace="template :: footer"></div>
 </body>
 </html>

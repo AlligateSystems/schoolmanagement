@@ -2,29 +2,30 @@
 <html lang="en">
 
 <head>
-
-    <head th:include="template :: headFragment(${pageTitle})"></head>
-    <style>
-        .custom-select {
-            background: none !important;
-        }
-    </style>
+<head th:include="template :: headFragment(${pageTitle})"></head>
+<style>
+.custom-select {
+	background: none !important;
+}
+</style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div th:replace="template :: navbar"></div>
-        <div th:replace="template :: sidebar_school1"></div>
+	<div class="wrapper">
+		<div th:replace="template :: navbar"></div>
+		<div th:replace="template :: sidebar_school1"></div>
 
-        <!-- ------------------Work Below------------------ -->
-        <div class="content-wrapper">
-            <div class="content-header"></div>
-            <section class="content">
-                <div class="container-fluid">
+		<!-- ------------------Work Below------------------ -->
+		<div class="content-wrapper">
+			<div class="content-header"></div>
+			<section class="content">
+				<div class="container-fluid">
 
-                    <!-- Form Fields -->
+					<!-- Form Fields -->
 					<div class="card card-primary">
-						<div class="card-header"><h4 class="float-left">પરિણામ મેળવો </h4></div>
+						<div class="card-header">
+							<h4 class="float-left">પરિણામ મેળવો</h4>
+						</div>
 						<div class="card-body">
 							<form class="" id="CustomeForm" method="post">
 								<div class="row">
@@ -36,15 +37,16 @@
 									</div>
 
 									<div class="col-xl-6 col-lg-6 col-12 form-group">
-										<label>રજિસ્ટર નંબર  <span class="text-danger">*</span></label> <input type="text"
-											id="registerNumber" name="registerNumber"
+										<label>રજિસ્ટર નંબર <span class="text-danger">*</span></label>
+										<input type="text" id="registerNumber" name="registerNumber"
 											placeholder="રજિસ્ટર નંબર" class="form-control">
 									</div>
 
 									<div class="col-12 form-group mg-t-8">
 										<button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
 										<!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
-										<button id="btnReset" type="reset" class="btn btn-danger">ફરીથી સેટ કરો</button>
+										<button id="btnReset" type="reset" class="btn btn-danger">ફરીથી
+											સેટ કરો</button>
 									</div>
 								</div>
 							</form>
@@ -52,32 +54,33 @@
 					</div>
 					<!-- Form Fields -->
 
-                    <!-- Data Table -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h4 class="float-left">વિદ્યાર્થીઓ સંગ્રહને માર્ક કરે છે</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="customTable" class="table display data-table text-nowrap">
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+					<!-- Data Table -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h4 class="float-left">વિદ્યાર્થીઓ સંગ્રહને માર્ક કરે છે</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="customTable"
+									class="table display data-table text-nowrap">
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 
 
-                </div>
-            </section>
-        </div>
-        <!-- ------------------Work Above ------------------ -->
-        
-    </div>
-    <div th:replace="template :: jsscript"></div>
-    
-    
-   <script>
+				</div>
+			</section>
+		</div>
+		<!-- ------------------Work Above ------------------ -->
+
+	</div>
+	<div th:replace="template :: jsscript"></div>
+
+
+	<script>
     $(document).ready(function() {
     	
     	$('input[type="text"]').change(function(){
@@ -120,12 +123,13 @@
 			dataType : 'json',
 		}).done(function(data) {
 			var mainData  = data.body;
-			console.log(mainData)
 			 table=$("#customTable").DataTable( {
 						data : mainData,
 						columns : [ 
 							{ title : "રજિસ્ટર નંબર" ,  "data": "registerNumber"  },
 							{ title : "રોલ નંબર" ,  "data": "rollNumber"  },
+							{ title : "નામ" ,  "data": "fullName"  },
+							{ title : "વર્ગ" ,  "data": "classIn"  },
 							{
 								title : "ક્રિયા",
 				                "orderable":      false,
@@ -159,7 +163,6 @@
                      cache: false,
                      processData: false
                  }).done(function (data) {
-                 	console.log(data)
                  	if (data.status == 200) {
                          swal({
                          	title: "Alert !",
@@ -193,7 +196,7 @@
         
     });
     </script>
-    
- <div th:replace="template :: footer"></div>   
+
+	<div th:replace="template :: footer"></div>
 </body>
 </html>

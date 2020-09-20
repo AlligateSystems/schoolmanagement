@@ -2,158 +2,205 @@
 <html lang="en">
 
 <head>
-
-    <head th:include="template :: headFragment(${pageTitle})"></head>
-    <style>
-        .custom-select {
-            background: none !important;
-        }
-    </style>
+<head th:include="template :: headFragment(${pageTitle})"></head>
+<style>
+.custom-select {
+	background: none !important;
+}
+</style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div th:replace="template :: navbar"></div>
-        <div th:replace="template :: sidebar_school3"></div>
+	<div class="wrapper">
+		<div th:replace="template :: navbar"></div>
+		<div th:replace="template :: sidebar_school3"></div>
 
-        <!-- ------------------Work Below------------------ -->
-        <div class="content-wrapper">
-            <div class="content-header"></div>
-            <section class="content">
-                <div class="container-fluid">
+		<!-- ------------------Work Below------------------ -->
+		<div class="content-wrapper">
+			<div class="content-header"></div>
+			<section class="content">
+				<div class="container-fluid">
 
-                    <!-- Form Fields -->
-                    <div class="card card-primary">
-                        <div class="card-header"><h4 class="float-left">વિદ્યાર્થીઓની હાજરી</h4></div>
-                        <div class="card-body">
-                            <form class="" id="CustomeForm" method="post">
-                                <div class="row">
-                                	<div class="col-md-12">
+					<!-- Form Fields -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h4 class="float-left">વિદ્યાર્થીઓની હાજરી</h4>
+						</div>
+						<div class="card-body">
+							<form class="" id="CustomeForm" method="post">
+								<div class="row">
+									<div class="col-md-12">
 										<div class="form-group d-none">
-											<label>ID</label> <input class="form-control" id="id" name="id">
+											<label>ID</label> <input class="form-control" id="id"
+												name="id">
 										</div>
 									</div>
-									
-                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>રજિસ્ટર નંબર  <span class="text-danger">*</span></label>
-                                        <input type="text" id="registerNumber" name="registerNumber" placeholder="રજિસ્ટર નંબર" class="form-control">
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-12 form-group">
-                                        <label>રોલ નંબર </label>
-                                        <input type="text" id="rollNumber" name="rollNumber" placeholder="રોલ નંબર" class="form-control">
-                                    </div>
-                                    
-                                    <table class="table">
-									  <thead>
-									    <tr>
-									      <th scope="col">માસ</th>
-									      <th scope="col">કુલ દિવસો</th>
-									      <th scope="col">વર્તમાન દિવસો</th>
-									    </tr>
-									  </thead>
-									  <tbody>
-									    <tr>
-									      <td scope="row"><label>જૂન</label></td>
-									      <td><input type="text" id="JuneTotal" name="JuneTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="JunePresent" name="JunePresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>જુલાઈ </label></td>
-									      <td><input type="text" id="JulyTotal" name="JulyTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="JulyPresent" name="JulyPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ઓગસ્ટ </label></td>
-									      <td><input type="text" id="AugustTotal" name="AugustTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="AugustPresent" name="AugustPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>સપ્ટેમ્બર</label></td>
-									      <td><input type="text" id="SeptemberTotal" name="SeptemberTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="SeptemberPresent" name="SeptemberPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ઓક્ટોબર</label></td>
-									      <td><input type="text" id="OctomerTotal" name="OctomerTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="OctomerPresent" name="OctomerPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>નવેમ્બર</label></td>
-									      <td><input type="text" id="NovemberTotal" name="NovemberTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="NovemberPresent" name="NovemberPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ડિસેમ્બર</label></td>
-									      <td><input type="text" id="DecemberTotal" name="DecemberTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="DecemberPresent" name="DecemberPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>જાન્યુઆરી</label></td>
-									      <td><input type="text" id="JanuaryTotal" name="JanuaryTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="JanuaryPresent" name="JanuaryPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>ફેબ્રુઆરી</label></td>
-									      <td><input type="text" id="FebruaryTotal" name="FebruaryTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="FebruaryPresent" name="FebruaryPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>માર્ચ</label></td>
-									      <td><input type="text" id="MarchTotal" name="MarchTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="MarchPresent" name="MarchPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>એપ્રિલ</label></td>
-									      <td><input type="text" id="AprilTotal" name="AprilTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="AprilPresent" name="AprilPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    <tr>
-									      <td scope="row"><label>મે</label></td>
-									      <td><input type="text" id="MayTotal" name="MayTotal" placeholder="Total" class="form-control"></td>
-									      <td><input type="text" id="MayPresent" name="MayPresent" placeholder="Present" class="form-control"></td>
-									    </tr>
-									    
-									  </tbody>
+
+									<div class="col-xl-6 col-lg-6 col-12 form-group">
+										<label>રજિસ્ટર નંબર <span class="text-danger">*</span></label>
+										<input type="text" id="registerNumber" name="registerNumber"
+											placeholder="રજિસ્ટર નંબર" class="form-control">
+									</div>
+									<div class="col-xl-6 col-lg-6 col-12 form-group">
+										<label>રોલ નંબર </label> <input type="text" id="rollNumber"
+											name="rollNumber" placeholder="રોલ નંબર" class="form-control">
+									</div>
+
+									<table class="table">
+										<thead>
+											<tr>
+												<th scope="col">માસ</th>
+												<th scope="col">કુલ દિવસો</th>
+												<th scope="col">વર્તમાન દિવસો</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td scope="row"><label>જૂન</label></td>
+												<td><input type="text" id="JuneTotal" name="JuneTotal"
+													placeholder="Total" class="form-control"></td>
+												<td><input type="text" id="JunePresent"
+													name="JunePresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>જુલાઈ </label></td>
+												<td><input type="text" id="JulyTotal" name="JulyTotal"
+													placeholder="Total" class="form-control"></td>
+												<td><input type="text" id="JulyPresent"
+													name="JulyPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ઓગસ્ટ </label></td>
+												<td><input type="text" id="AugustTotal"
+													name="AugustTotal" placeholder="Total" class="form-control"></td>
+												<td><input type="text" id="AugustPresent"
+													name="AugustPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>સપ્ટેમ્બર</label></td>
+												<td><input type="text" id="SeptemberTotal"
+													name="SeptemberTotal" placeholder="Total"
+													class="form-control"></td>
+												<td><input type="text" id="SeptemberPresent"
+													name="SeptemberPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ઓક્ટોબર</label></td>
+												<td><input type="text" id="OctomerTotal"
+													name="OctomerTotal" placeholder="Total"
+													class="form-control"></td>
+												<td><input type="text" id="OctomerPresent"
+													name="OctomerPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>નવેમ્બર</label></td>
+												<td><input type="text" id="NovemberTotal"
+													name="NovemberTotal" placeholder="Total"
+													class="form-control"></td>
+												<td><input type="text" id="NovemberPresent"
+													name="NovemberPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ડિસેમ્બર</label></td>
+												<td><input type="text" id="DecemberTotal"
+													name="DecemberTotal" placeholder="Total"
+													class="form-control"></td>
+												<td><input type="text" id="DecemberPresent"
+													name="DecemberPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>જાન્યુઆરી</label></td>
+												<td><input type="text" id="JanuaryTotal"
+													name="JanuaryTotal" placeholder="Total"
+													class="form-control"></td>
+												<td><input type="text" id="JanuaryPresent"
+													name="JanuaryPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>ફેબ્રુઆરી</label></td>
+												<td><input type="text" id="FebruaryTotal"
+													name="FebruaryTotal" placeholder="Total"
+													class="form-control"></td>
+												<td><input type="text" id="FebruaryPresent"
+													name="FebruaryPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>માર્ચ</label></td>
+												<td><input type="text" id="MarchTotal"
+													name="MarchTotal" placeholder="Total" class="form-control"></td>
+												<td><input type="text" id="MarchPresent"
+													name="MarchPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>એપ્રિલ</label></td>
+												<td><input type="text" id="AprilTotal"
+													name="AprilTotal" placeholder="Total" class="form-control"></td>
+												<td><input type="text" id="AprilPresent"
+													name="AprilPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+											<tr>
+												<td scope="row"><label>મે</label></td>
+												<td><input type="text" id="MayTotal" name="MayTotal"
+													placeholder="Total" class="form-control"></td>
+												<td><input type="text" id="MayPresent"
+													name="MayPresent" placeholder="Present"
+													class="form-control"></td>
+											</tr>
+
+										</tbody>
 									</table>
-                                    
-                                    
-                                    <div class="col-12 form-group mg-t-8">
-                                        <button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
-                                        <!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
-                                        <button id="btnReset" type="reset" class="btn btn-danger">ફરીથી સેટ કરો</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+
+
+									<div class="col-12 form-group mg-t-8">
+										<button id="btnSubmit" type="button" class="btn btn-primary">સબમિટ</button>
+										<!-- <button id="btnUpdate" type="button" class="btn btn-warning">Update</button> -->
+										<button id="btnReset" type="reset" class="btn btn-danger">ફરીથી
+											સેટ કરો</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
 					<!-- Form Fields -->
 
-                    <!-- Data Table -->
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h4 class="float-left">વિદ્યાર્થી યાદી</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="customTable" class="table display data-table text-nowrap">
-                                    <tbody>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+					<!-- Data Table -->
+					<div class="card card-primary">
+						<div class="card-header">
+							<h4 class="float-left">વિદ્યાર્થી યાદી</h4>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="customTable"
+									class="table display data-table text-nowrap">
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 
 
-                </div>
-            </section>
-        </div>
-        <!-- ------------------Work Above ------------------ -->
-        
-    </div>
-    <div th:replace="template :: jsscript"></div>
-    
-    
-   <script>
+				</div>
+			</section>
+		</div>
+		<!-- ------------------Work Above ------------------ -->
+
+	</div>
+	<div th:replace="template :: jsscript"></div>
+
+
+	<script>
     $(document).ready(function() {
     	
     	$('input[type="text"]').change(function(){
@@ -307,7 +354,7 @@
         
     });
     </script>
-    
- <div th:replace="template :: footer"></div>   
+
+	<div th:replace="template :: footer"></div>
 </body>
 </html>
