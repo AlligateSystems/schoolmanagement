@@ -80,7 +80,7 @@
                                         <input type="text" id="fatherName" name="fatherName" placeholder="પિતાનું નામ" class="form-control">
                                     </div>
                                     <div class="col-xl-4 col-lg-6 col-12 form-group">
-                                        <label>માતાનું નામ  </label>
+                                        <label>માતાનું નામ  <span class="text-danger">*</span></label>
                                         <input type="text" id="motherName" name="motherName" placeholder="માતાનું નામ" class="form-control">
                                     </div>
                                     <div class="col-xl-4 col-lg-6 col-12 form-group">
@@ -366,6 +366,11 @@
                 $("#classIn").after('<span class="text-danger vali"> Required ! </span>');
                 return false;
             }
+            if ($("#motherName").val() == "") {
+                $("#motherName").after('<span class="text-danger vali"> Required ! </span>');
+                return false;
+            }
+            
             return true;
         }
         
