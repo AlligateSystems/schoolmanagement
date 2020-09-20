@@ -59,7 +59,7 @@ public class School2_ResultController {
 			if (student == null) {
 				baseResponse.setStatus(300);
 				baseResponse.setType(ResponseType.RESPONSE_ERROR);
-				baseResponse.setMessage("Student Not Exits");
+				baseResponse.setMessage("Student Not Exist");
 				return baseResponse;
 			}
 			if(marksList.isEmpty()) {
